@@ -1,0 +1,386 @@
+/* ════════════════════════════════════════════════════════════════
+   CALASSA ADVENTURE v3 — ZAKŁADKA CSS
+   Wklej CAŁOŚĆ do zakładki CSS (nadpisz poprzednie).
+════════════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cinzel+Decorative:wght@700;900&display=swap');
+
+:root{
+  --ca-gold:#ffd24a; --ca-gd:#c8901f; --ca-cream:#fff6df; --ca-foam:#cdeeff;
+  --ca-sh:#1d7f93; --ca-mid:#0c2d4f; --ca-deep:#061528; --ca-abyss:#01060e;
+  --ca-bio:#34e6cf; --ca-blood:#d42424; --ca-win:#7fffb0;
+  --ca-frame:linear-gradient(135deg,#c89020,#8a5018 45%,#604010);
+  --ca-scene-h:600px;   /* wysokość grafiki tło+pomost */
+  --ca-water-top:600px; /* gdzie zaczyna się woda pod pomostem */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:transparent;overflow:hidden;font-family:'Cinzel',serif}
+
+#ca-fit{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#ca-stage{position:relative;width:1920px;height:1080px;flex:0 0 auto;overflow:hidden;transform-origin:center}
+#ca-world{position:absolute;inset:0;transform-origin:915px 470px;transition:transform .9s cubic-bezier(.3,0,.3,1);
+  background:linear-gradient(180deg,var(--ca-sh) 0%,#135d77 30%,var(--ca-mid) 55%,var(--ca-deep) 80%,var(--ca-abyss) 100%)}
+
+/* ── SCENA (tło+pomost jedna grafika) ── */
+#ca-scene{position:absolute;left:0;right:0;top:0;height:var(--ca-scene-h);background-size:cover;background-position:center top;z-index:2}
+#ca-scene.has-bg .ca-scene-lbl{display:none}
+#ca-scene:not(.has-bg){background:linear-gradient(180deg,#10212e 0%,#1a3850 60%,#1d7f93 100%)}
+.ca-scene-lbl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);font-size:14px;letter-spacing:3px;font-weight:700}
+
+/* belki/słupy pod wodą */
+#ca-posts{position:absolute;inset:0;z-index:3;pointer-events:none}
+/* pozioma belka pomostu pod wodą (łączy słupy) */
+#ca-posts::before{content:"";position:absolute;left:0;right:0;top:calc(var(--ca-scene-h) - 6px);height:22px;
+  background:linear-gradient(180deg,#3a2814,#241808 55%,#160e06);box-shadow:0 6px 14px rgba(0,0,0,.5),inset 0 2px 0 rgba(120,90,50,.3)}
+.ca-post{position:absolute;top:calc(var(--ca-scene-h) + 14px);width:20px;height:150px;background:linear-gradient(180deg,#2e2012,#160e06);border-radius:0 0 4px 4px;box-shadow:2px 0 8px rgba(0,0,0,.55),inset -3px 0 0 rgba(0,0,0,.3),inset 3px 0 0 rgba(120,90,50,.2)}
+
+/* ── ATMOSFERA ── */
+#ca-godrays{position:absolute;left:0;right:0;top:var(--ca-scene-h);bottom:0;pointer-events:none;mix-blend-mode:screen;opacity:.4;
+  background:repeating-linear-gradient(98deg,transparent 0 80px,rgba(180,235,255,.10) 80px 120px,transparent 120px 220px);filter:blur(7px);animation:ca-ray 24s linear infinite,ca-rayPulse 9s ease-in-out infinite;z-index:4}
+@keyframes ca-ray{50%{transform:translateX(70px)}}
+@keyframes ca-rayPulse{0%,100%{opacity:.28}50%{opacity:.52}}
+#ca-weatherFx{position:absolute;inset:0;pointer-events:none;z-index:9;opacity:0;transition:opacity 1s}
+#ca-vignette{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 300px 80px rgba(0,0,0,.78);z-index:20}
+
+/* pogodowe warianty (klasy na #ca-world) */
+#ca-world.w-storm{filter:brightness(.8) contrast(1.1)}
+#ca-world.w-storm #ca-weatherFx{opacity:1;background:repeating-linear-gradient(75deg,transparent 0 18px,rgba(180,200,220,.06) 18px 20px);animation:ca-rain .4s linear infinite}
+@keyframes ca-rain{to{transform:translateY(40px)}}
+#ca-world.w-fog #ca-weatherFx{opacity:1;background:radial-gradient(circle at 50% 40%,rgba(200,220,235,.18),transparent 70%);backdrop-filter:blur(1px)}
+#ca-world.w-night{filter:brightness(.6) saturate(.8) hue-rotate(-12deg)}
+#ca-world.w-night #ca-weatherFx{opacity:1;background:radial-gradient(circle at 50% 0,rgba(40,60,110,.25),transparent 60%)}
+
+/* ── DNO (kraby usunięte) ── */
+#ca-bottom{display:none}
+
+/* ── RYBY (GIF-y jako <img>) ── */
+#ca-fishLayer{position:absolute;inset:0;z-index:6;pointer-events:none}
+.ca-fish{position:absolute;will-change:transform;transition:none}
+.ca-fish img,.ca-fish svg,.ca-fish .ca-fishemoji{display:block;width:100%;height:100%;image-rendering:auto}
+.ca-fish svg{overflow:visible}
+.ca-fish .ca-fishemoji{display:flex;align-items:center;justify-content:center;font-size:30px}
+.ca-fish.caught{filter:drop-shadow(0 0 8px var(--ca-gold))}
+
+/* ── WĘDKARZ ── */
+#ca-hero{position:absolute;top:236px;width:120px;height:150px;z-index:10}
+#ca-hero .ca-body{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;font-size:80px;filter:drop-shadow(0 8px 10px rgba(0,0,0,.6));transform-origin:bottom center;background-size:contain;background-repeat:no-repeat;background-position:center bottom}
+#ca-hero.has-img .ca-body{font-size:0}
+#ca-hero.walk .ca-body{animation:ca-walk .54s ease-in-out infinite}
+@keyframes ca-walk{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-4px) rotate(3deg)}}
+#ca-hero.idle .ca-body{animation:ca-breathe 3.8s ease-in-out infinite}
+@keyframes ca-breathe{50%{transform:translateY(-3px) scale(1.015)}}
+#ca-hero.cast .ca-body{animation:ca-castA .7s ease-out}
+@keyframes ca-castA{0%{transform:rotate(-18deg)}55%{transform:rotate(16deg)}100%{transform:rotate(0)}}
+#ca-hero.tension .ca-body{animation:ca-fightT .45s ease-in-out infinite}
+@keyframes ca-fightT{0%,100%{transform:rotate(12deg) translateY(5px)}50%{transform:rotate(6deg) translateY(1px)}}
+#ca-hero.reel .ca-body{animation:ca-reelA .32s ease-in-out infinite}
+@keyframes ca-reelA{50%{transform:rotate(-7deg) translateY(2px)}}
+#ca-hero.win .ca-body{animation:ca-winA .9s ease-out}
+@keyframes ca-winA{0%{transform:translateY(10px) scale(.9)}55%{transform:translateY(-12px) scale(1.1)}100%{transform:translateY(0) scale(1.05)}}
+#ca-hero .ca-shadow{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:70px;height:12px;background:radial-gradient(ellipse,rgba(0,0,0,.5),transparent 70%);border-radius:50%}
+#ca-hero .ca-pose{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-family:'Cinzel';font-weight:800;font-size:10px;color:var(--ca-gold);background:rgba(2,8,16,.7);padding:1px 8px;border-radius:8px;white-space:nowrap;opacity:.6}
+
+/* ── CHMURKA WĘDKARZA ── */
+#ca-bubble{position:absolute;z-index:12;background:rgba(255,248,232,.98);color:#1a2530;font-family:'Cinzel';font-weight:800;font-size:19px;padding:11px 18px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.55);opacity:0;transform:translate(-50%,10px) scale(.85);transition:.34s cubic-bezier(.2,1.5,.4,1);white-space:nowrap;pointer-events:none}
+#ca-bubble.show{opacity:1;transform:translate(-50%,0) scale(1)}
+#ca-bubble::after{content:"";position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);border:10px solid transparent;border-top-color:rgba(255,248,232,.98)}
+
+/* ── OBSERWATORZY: style w sekcji "4 grupy" na końcu pliku ── */
+@keyframes ca-bob{50%{transform:translateY(-3px)}}
+
+/* ── ŻYŁKA / ROBAK / HACZYK ── */
+#ca-lineSvg{position:absolute;inset:0;pointer-events:none;z-index:7}
+#ca-lineSvg path{fill:none;stroke:rgba(230,245,255,.6);stroke-width:1.6;filter:drop-shadow(0 0 3px rgba(150,220,255,.5))}
+#ca-lineSvg path.taut{stroke:rgba(255,170,90,.9);stroke-width:2.2}
+#ca-lineSvg path.danger{stroke:rgba(255,70,70,1);stroke-width:2.6;filter:drop-shadow(0 0 6px rgba(255,70,70,.9))}
+#ca-worm{position:absolute;z-index:8;width:26px;height:26px;transform:translate(-50%,-50%);background-size:contain;background-repeat:no-repeat;background-position:center;opacity:0;transition:opacity .3s}
+#ca-worm.show{opacity:1;animation:ca-wormwig 1.2s ease-in-out infinite}
+#ca-worm:not(.has-img)::after{content:"🪱";font-size:18px;position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+@keyframes ca-wormwig{50%{transform:translate(-50%,-50%) rotate(12deg)}}
+#ca-ripple{position:absolute;z-index:6;border:2px solid rgba(180,235,255,.6);border-radius:50%;transform:translate(-50%,-50%);opacity:0;pointer-events:none}
+#ca-hook{position:absolute;font-size:22px;z-index:8;filter:drop-shadow(0 0 7px rgba(120,220,255,.8));transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
+#ca-tag{position:absolute;z-index:11;font-family:'Cinzel Decorative';font-weight:900;font-size:24px;color:var(--ca-foam);text-shadow:0 0 14px rgba(70,200,255,.8),2px 2px 0 #000;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
+
+/* ── WIESZAK POŁOWÓW ── */
+.ca-catch{animation:ca-hang 3s ease-in-out infinite;transform-origin:top center}
+.ca-catch:nth-child(2n){animation-delay:.8s}.ca-catch:nth-child(3n){animation-delay:1.5s}
+@keyframes ca-hang{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.ca-catch .ca-rope{width:2px;height:26px;background:rgba(200,160,90,.6)}
+.ca-catch .ca-cfish{width:54px;height:40px;background-size:contain;background-repeat:no-repeat;background-position:center;transform:rotate(90deg)}
+.ca-catch .ca-cfish:not(.has-img){display:flex;align-items:center;justify-content:center;font-size:28px;transform:none}
+.ca-catch .ca-clabel{font-size:9px;color:var(--ca-cream);font-weight:700;text-shadow:1px 1px 0 #000;margin-top:2px;text-align:center;white-space:nowrap}
+.ca-catch .ca-clabel b{color:var(--ca-gold)}
+
+/* ── SONAR GLASS ── */
+#ca-sonar{position:absolute;right:48px;top:120px;width:120px;height:600px;z-index:9;border-radius:16px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(10,32,48,.85),rgba(2,10,18,.92));border:3px solid;border-image:var(--ca-frame) 1;
+  box-shadow:0 0 34px rgba(0,0,0,.6),inset 0 0 40px rgba(52,230,207,.08)}
+#ca-sonar h4{font-family:'Cinzel Decorative';font-weight:900;font-size:12px;letter-spacing:3px;text-align:center;color:var(--ca-gold);padding-top:12px;position:relative;z-index:3;text-shadow:1px 1px 0 #000}
+.ca-sonar-glass{position:absolute;inset:0;background:linear-gradient(125deg,rgba(255,255,255,.10),transparent 40%);pointer-events:none;z-index:2}
+.ca-strk{position:absolute;left:50%;top:48px;bottom:18px;width:3px;transform:translateX(-50%);background:linear-gradient(180deg,var(--ca-sh),var(--ca-mid) 50%,var(--ca-abyss));border-radius:3px;z-index:1}
+.ca-sweep{position:absolute;left:6px;right:6px;height:60px;top:48px;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(52,230,207,.22) 70%,rgba(52,230,207,.4));border-bottom:1px solid rgba(52,230,207,.6);
+  animation:ca-sweep 3.2s linear infinite}
+@keyframes ca-sweep{0%{top:48px;opacity:.2}50%{opacity:.7}100%{top:calc(100% - 30px);opacity:.2}}
+.ca-tk{position:absolute;left:50%;transform:translateX(-50%);width:48px;text-align:center;font-size:10px;color:rgba(205,238,255,.65);font-weight:700;z-index:3}
+#ca-marks{position:absolute;inset:0;pointer-events:none;z-index:3}
+.ca-mk{position:absolute;left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#dff4ff,#2b6f93);border:2px solid var(--ca-gold);box-shadow:0 0 8px rgba(255,210,74,.6);transition:.3s}
+.ca-mk .ca-ml{position:absolute;left:16px;top:-3px;font-size:9px;font-weight:800;color:var(--ca-cream);white-space:nowrap;text-shadow:1px 1px 0 #000}
+.ca-mk.over{filter:grayscale(.7) brightness(.55);border-color:var(--ca-blood);box-shadow:none}
+.ca-mk.win{width:16px;height:16px;border-color:#fff3c4;box-shadow:0 0 16px var(--ca-gold),0 0 30px var(--ca-gold);animation:ca-pls 1s infinite}
+@keyframes ca-pls{50%{transform:translateX(-50%) scale(1.3)}}
+#ca-biteLine{position:absolute;left:8px;right:8px;height:3px;background:var(--ca-blood);box-shadow:0 0 12px var(--ca-blood);top:48px;opacity:0;transition:top 1s,opacity .3s;z-index:4}
+#ca-biteLine span{position:absolute;right:0;top:-15px;font-size:10px;font-weight:800;color:#ffb3b3;white-space:nowrap}
+
+/* ── POGODA BADGE ── */
+#ca-weatherBadge{position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:11;font-family:'Cinzel';font-weight:800;font-size:14px;color:var(--ca-cream);background:rgba(2,10,18,.6);border:1px solid rgba(120,180,210,.3);border-radius:20px;padding:5px 16px;letter-spacing:1px;opacity:0;transition:opacity .5s}
+#ca-weatherBadge.show{opacity:1}
+
+/* ── LEADERBOARD ── */
+#ca-lb{position:absolute;left:46px;top:20px;width:300px;z-index:9;background:linear-gradient(180deg,rgba(10,30,45,.85),rgba(2,8,16,.92));border:3px solid;border-image:var(--ca-frame) 1;border-radius:14px;padding:13px 15px}
+#ca-lb-head{font-family:'Cinzel Decorative';font-weight:900;font-size:16px;letter-spacing:2px;color:var(--ca-gold);text-align:center;text-shadow:1px 1px 0 #000}
+#ca-lb-sub{text-align:center;font-size:10px;letter-spacing:2px;color:var(--ca-bio);margin:3px 0 9px;text-transform:uppercase}
+.ca-lbrow{display:flex;align-items:center;gap:8px;padding:5px 4px;border-bottom:1px solid rgba(255,210,74,.1)}
+.ca-lbrow .rk{font-family:'Cinzel Decorative';font-weight:900;font-size:14px;color:var(--ca-gold);width:18px;text-align:center}
+.ca-lbrow .av{width:28px;height:28px;border-radius:50%;background:#1c4a66 center/cover;border:2px solid var(--ca-gd)}
+.ca-lbrow .nm{flex:1;font-weight:800;font-size:12px;color:var(--ca-cream)}
+.ca-lbrow .tc{font-weight:800;font-size:11px;color:var(--ca-gold)}
+.ca-lbrow .tt{font-size:8px;color:#46c8ff;font-weight:700}
+.ca-lbrow.r2 .rk{color:#cfd6db}.ca-lbrow.r3 .rk{color:#d59a5a}
+.ca-lbrow.empty{justify-content:center;color:rgba(255,255,255,.3);font-size:11px;border:none}
+#ca-lb-record{margin-top:10px;text-align:center;font-size:10px;letter-spacing:1px;color:var(--ca-bio)}
+
+/* ── TYTUŁ ── */
+#ca-title{position:absolute;top:150px;left:50%;transform:translateX(-50%);text-align:center;z-index:8;pointer-events:none;transition:opacity .6s}
+#ca-title-main{font-family:'Cinzel Decorative';font-weight:900;font-size:46px;letter-spacing:8px;color:var(--ca-gold);text-shadow:0 0 22px rgba(255,210,74,.5),3px 3px 0 #000;animation:ca-titleGlow 3.5s ease-in-out infinite}
+@keyframes ca-titleGlow{0%,100%{text-shadow:0 0 18px rgba(255,210,74,.4),3px 3px 0 #000;transform:translateY(0)}50%{text-shadow:0 0 34px rgba(255,210,74,.85),0 0 60px rgba(255,180,60,.4),3px 3px 0 #000;transform:translateY(-4px)}}
+#ca-title-sub{font-family:'Cinzel';font-weight:700;font-size:14px;letter-spacing:6px;color:var(--ca-foam);text-transform:uppercase}
+
+/* ── PANEL ZASAD ── */
+#ca-rules{position:absolute;inset:0;z-index:15;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,rgba(4,16,28,.85),rgba(0,0,0,.92))}
+#ca-rules.on{display:flex}
+.ca-rules-inner{width:840px;max-width:90%;background:linear-gradient(180deg,#0e2b40,#04101c);border:4px solid;border-image:var(--ca-frame) 1;border-radius:20px;padding:34px 40px;box-shadow:0 0 60px rgba(255,210,74,.25)}
+.ca-rules-h{font-family:'Cinzel Decorative';font-weight:900;font-size:30px;letter-spacing:4px;color:var(--ca-gold);text-align:center;text-shadow:2px 2px 0 #000;margin-bottom:18px}
+.ca-rules-body{font-family:'Cinzel';font-weight:600;font-size:18px;line-height:1.7;color:var(--ca-cream)}
+.ca-rules-body b{color:var(--ca-gold)}
+.ca-rules-foot{text-align:center;margin-top:20px;font-family:'Cinzel';font-weight:800;font-size:15px;color:var(--ca-bio);letter-spacing:1px}
+
+/* ── NARRACJA ── */
+#ca-narr{position:absolute;bottom:128px;left:50%;transform:translateX(-50%);z-index:11;max-width:1050px;text-align:center;font-family:'Cinzel';font-weight:800;font-size:21px;color:var(--ca-foam);text-shadow:2px 2px 0 #000,0 0 16px rgba(70,200,255,.5);opacity:0;transition:opacity .5s}
+#ca-narr.show{opacity:1}
+
+/* ── HUD KOMEND ── */
+#ca-phud{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:12;display:flex;align-items:center;gap:14px;padding:12px 26px;border-radius:14px;background:linear-gradient(180deg,rgba(10,30,45,.88),rgba(2,8,16,.92));border:2px solid;border-image:var(--ca-frame) 1}
+#ca-pcmd{font-family:'Cinzel Decorative';font-weight:900;font-size:24px;color:#0a1a26;background:linear-gradient(180deg,var(--ca-gold),var(--ca-gd));padding:5px 20px;border-radius:11px;letter-spacing:2px}
+#ca-ptxt{font-family:'Cinzel';font-weight:700;font-size:17px;color:var(--ca-cream)}
+#ca-ahud{position:absolute;bottom:16px;left:22px;z-index:12;opacity:.45;font-size:11px;color:#9fd0e0;background:rgba(2,8,16,.55);border:1px solid rgba(120,180,210,.25);border-radius:8px;padding:5px 11px}
+.ca-alab{font-size:9px;letter-spacing:2px;color:#5e8aa0;display:block;text-transform:uppercase}
+#ca-acmd b{color:var(--ca-gold);font-weight:800}
+
+/* ── PANEL WALKI ── */
+#ca-fightHud{position:absolute;left:50%;top:430px;transform:translateX(-50%);width:520px;z-index:12;opacity:0;transition:opacity .4s}
+.ca-fight-title{text-align:center;font-family:'Cinzel Decorative';font-weight:900;font-size:18px;color:var(--ca-gold);letter-spacing:3px;text-shadow:1px 1px 0 #000;margin-bottom:6px}
+.ca-fight-bars{display:flex;gap:12px}
+.ca-col{flex:1}
+.ca-cl{font-size:11px;font-weight:800;letter-spacing:1px;margin-bottom:3px;text-transform:uppercase}
+.ca-stamina .ca-cl{color:var(--ca-win)}.ca-tension .ca-cl{color:#ff9a5a;text-align:right}
+.ca-track{height:18px;border-radius:10px;background:rgba(2,8,16,.7);border:2px solid var(--ca-gd);overflow:hidden;position:relative}
+.ca-sfill{position:absolute;inset:0;width:100%;background:linear-gradient(90deg,#34e6cf,#7fffb0);transition:width .2s}
+.ca-tfill{position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,#ffd24a,#ff9a5a);transition:width .15s}
+.ca-tzone{position:absolute;top:0;bottom:0;right:0;width:22%;background:repeating-linear-gradient(45deg,rgba(212,36,36,.55) 0 6px,transparent 6px 12px)}
+.ca-maneuver{text-align:center;margin-top:7px;font-family:'Cinzel';font-weight:800;font-size:16px;color:var(--ca-foam);min-height:20px;text-shadow:1px 1px 0 #000}
+
+/* ── PANEL !moje ── */
+#ca-minePanel{position:absolute;right:200px;bottom:120px;z-index:13;width:290px;display:none;background:linear-gradient(180deg,rgba(10,30,45,.95),rgba(2,8,16,.97));border:2px solid;border-image:var(--ca-frame) 1;border-radius:12px;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.7)}
+#ca-minePanel.show{display:block;animation:ca-pop .25s ease}
+@keyframes ca-pop{from{transform:translateY(14px);opacity:0}to{transform:translateY(0);opacity:1}}
+#ca-minePanel .mh{font-family:'Cinzel Decorative';font-weight:900;font-size:15px;color:var(--ca-gold);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+#ca-minePanel .mh .av{width:34px;height:34px;border-radius:50%;background:#1c4a66 center/cover;border:2px solid var(--ca-gold)}
+#ca-minePanel .mrow{display:flex;justify-content:space-between;font-size:13px;color:var(--ca-cream);font-weight:700;padding:3px 0}
+#ca-minePanel .mrow b{color:var(--ca-gold)}
+
+/* ── REVEAL ── */
+#ca-rev{position:absolute;inset:0;z-index:16;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,rgba(0,0,0,.4),rgba(0,0,0,.8))}
+#ca-rev.on{display:flex}
+#ca-card{width:400px;border-radius:18px;padding:6px;background:var(--ca-frame);box-shadow:0 0 60px rgba(255,210,74,.4),0 20px 50px rgba(0,0,0,.7);transform:scale(.5) rotate(-8deg);opacity:0;transition:transform .7s cubic-bezier(.2,1.5,.4,1),opacity .5s}
+#ca-card.in{transform:scale(1) rotate(0);opacity:1}
+#ca-ci{background:linear-gradient(180deg,#0e2b40,#04101c);border-radius:13px;padding:20px;text-align:center;position:relative;overflow:hidden}
+.ca-holo{position:absolute;inset:0;mix-blend-mode:screen;opacity:.35;background:linear-gradient(125deg,transparent 30%,rgba(120,220,255,.6),rgba(255,210,74,.5),transparent 70%);animation:ca-holo 3s linear infinite}
+@keyframes ca-holo{0%{transform:translateX(-60%)}100%{transform:translateX(60%)}}
+.ca-rr{font-family:'Cinzel Decorative';font-weight:900;font-size:12px;letter-spacing:3px;color:var(--ca-gold);text-transform:uppercase}
+.ca-art{height:160px;margin:8px 0;display:flex;align-items:center;justify-content:center;font-size:88px;background:radial-gradient(circle at 50% 40%,rgba(70,200,255,.25),transparent 70%);background-size:contain;background-repeat:no-repeat;background-position:center}
+.ca-art.has-img #ca-art-emoji{display:none}
+.ca-nm{font-family:'Cinzel Decorative';font-weight:900;font-size:26px;color:var(--ca-cream);text-shadow:0 0 16px rgba(70,200,255,.6)}
+.ca-st{display:flex;justify-content:center;gap:16px;margin:8px 0;font-weight:700;font-size:14px;color:var(--ca-foam)}.ca-st b{color:var(--ca-gold)}
+.ca-wn{margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(255,210,74,.1);border:1px solid rgba(255,210,74,.3);border-radius:11px;padding:7px}
+.ca-wn .av{width:34px;height:34px;border-radius:50%;background:#1c4a66 center/cover;border:2px solid var(--ca-gold)}
+.ca-wn .w{font-weight:800;font-size:15px;color:var(--ca-cream)}
+.ca-po{font-family:'Cinzel Decorative';font-weight:900;font-size:22px;color:var(--ca-win);margin-top:8px;text-shadow:0 0 18px rgba(127,255,176,.6)}
+#ca-card.fail .ca-po{color:var(--ca-blood);text-shadow:0 0 18px rgba(212,36,36,.6)}
+
+/* ── PANEL TESTOWY ── */
+#ca-tp{position:absolute;top:8px;right:8px;z-index:60;width:250px;font-family:'Cinzel';background:rgba(2,8,16,.93);border:1px solid var(--ca-gd);border-radius:10px;color:#cde;font-size:12px}
+#ca-tp .tph{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;cursor:pointer;font-family:'Cinzel Decorative';font-weight:900;color:var(--ca-gold);border-bottom:1px solid rgba(255,210,74,.2)}
+#ca-tp .tpb{padding:8px;display:flex;flex-direction:column;gap:6px}
+#ca-tp .tps{font-size:10px;color:#7aa;letter-spacing:1px;margin-top:4px}
+#ca-tp .tprow{display:flex;flex-wrap:wrap;gap:4px}
+#ca-tp button{flex:1;min-width:42px;cursor:pointer;border:none;border-radius:6px;padding:6px 4px;font-weight:800;font-size:11px;background:#1b2a36;color:#bcd;transition:.15s}
+#ca-tp button:hover{background:#284154}
+#ca-tp button.prim{background:linear-gradient(180deg,var(--ca-gold),var(--ca-gd));color:#0a1a26}
+#ca-tp button.dng{background:#3a1414;color:#f6a}
+#ca-tp select{border-radius:6px;border:1px solid #456;background:#16242f;color:#cde;padding:5px;font-family:'Cinzel';font-weight:700;width:100%}
+
+/* ── SKALA GŁĘBOKOŚCI (lewa, morska) ── */
+#ca-depthScale{position:absolute;left:18px;z-index:7;width:54px;pointer-events:none}
+#ca-depthScale .ca-ds-line{position:absolute;left:24px;top:0;bottom:0;width:3px;background:linear-gradient(180deg,rgba(255,210,74,.7),rgba(200,144,31,.4));border-radius:3px;box-shadow:0 0 8px rgba(255,210,74,.3)}
+.ca-ds-mark{position:absolute;left:0;display:flex;align-items:center;gap:5px;transform:translateY(-50%)}
+.ca-ds-mark .tick{width:14px;height:2px;background:rgba(255,210,74,.7);margin-left:17px}
+.ca-ds-mark .lab{font-family:'Cinzel';font-weight:800;font-size:11px;color:rgba(255,240,200,.85);text-shadow:1px 1px 0 #000;white-space:nowrap}
+.ca-ds-mark.major .tick{width:22px;height:3px;background:var(--ca-gold);margin-left:9px}
+.ca-ds-mark.major .lab{font-size:13px;color:var(--ca-gold)}
+
+/* ── OBSERWATORZY (4 grupy) ── */
+.ca-obs{position:absolute;z-index:8;display:flex;align-items:flex-end}
+#ca-obsLN,#ca-obsLF{flex-direction:row-reverse}
+.ca-observer{position:relative;display:flex;flex-direction:column;align-items:center;animation:ca-bob 2.6s ease-in-out infinite}
+.ca-observer:nth-child(2n){animation-delay:.5s}.ca-observer:nth-child(3n){animation-delay:1s}
+.ca-observer .ca-osp{background-size:contain;background-repeat:no-repeat;background-position:center bottom;display:flex;align-items:center;justify-content:center;font-size:11px;color:#9fd0e0}
+.ca-observer .ca-onm{font-size:11px;color:var(--ca-cream);font-weight:700;margin-top:2px;text-shadow:1px 1px 0 #000;white-space:nowrap}
+.ca-observer .ca-odepth{font-size:11px;font-weight:800;color:#0a1a26;background:linear-gradient(180deg,var(--ca-gold),var(--ca-gd));padding:0 7px;border-radius:8px;margin-top:1px}
+.ca-observer.over{opacity:.4;filter:grayscale(.7)}
+.ca-obubble{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:6px;background:rgba(255,255,255,.96);color:#13202b;font-family:'Cinzel';font-weight:700;font-size:12px;padding:4px 10px;border-radius:11px;white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,.45);opacity:0;transition:opacity .2s;max-width:240px;overflow:hidden;text-overflow:ellipsis}
+.ca-obubble.show{opacity:1}
+.ca-obubble::after{content:"";position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:rgba(255,255,255,.96)}
+
+/* ── IMIĘ WĘDKARZA ── */
+.ca-heroname{position:absolute;bottom:96%;left:50%;transform:translateX(-50%);font-family:'Cinzel';font-weight:800;font-size:13px;color:var(--ca-gold);background:linear-gradient(180deg,rgba(10,30,45,.9),rgba(2,8,16,.92));padding:2px 12px;border-radius:9px;border:1px solid rgba(255,210,74,.4);white-space:nowrap;text-shadow:1px 1px 0 #000;box-shadow:0 2px 8px rgba(0,0,0,.5);z-index:13}
+
+/* ── WIELKI CIEŃ (zapowiedź rzadkiej ryby) ── */
+#ca-bigShadow{position:absolute;z-index:5;width:520px;height:200px;opacity:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(2,10,18,.82),rgba(2,10,18,.45) 55%,transparent 75%);
+  filter:blur(7px);transition:opacity 1.4s ease}
+#ca-bigShadow.show{opacity:1}
+#ca-bigShadow::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 30% 50%,rgba(0,0,0,.5),transparent 70%);transform:scaleX(1.4)}
+
+/* ── FX: plusk / bąbelki ── */
+#ca-fxLayer{position:absolute;inset:0;z-index:6;pointer-events:none}
+.ca-splash{position:absolute;border:3px solid rgba(180,230,255,.7);border-radius:50%;transform:translate(-50%,-50%);animation:ca-splashA 1s ease-out forwards}
+@keyframes ca-splashA{0%{width:6px;height:6px;opacity:.9}100%{width:80px;height:32px;opacity:0}}
+.ca-bubbleUp{position:absolute;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.9),rgba(150,200,230,.35));animation:ca-bubbleA linear forwards}
+@keyframes ca-bubbleA{0%{transform:translateY(0) scale(.6);opacity:.7}100%{transform:translateY(-140px) scale(1.1);opacity:0}}
+
+/* ── DYMEK DRWIĄCEJ RYBY ── */
+.ca-fishtaunt{position:absolute;z-index:11;background:rgba(20,40,55,.92);color:#bdf0ff;font-family:'Cinzel';font-weight:700;font-size:13px;padding:4px 11px;border-radius:12px;border:1px solid rgba(120,200,230,.4);white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,.5);opacity:0;transform:translate(-50%,6px);transition:.3s;pointer-events:none}
+.ca-fishtaunt.show{opacity:1;transform:translate(-50%,0)}
+.ca-fishtaunt::after{content:"";position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:rgba(20,40,55,.92)}
+
+/* ── WIESZAK: grafika tła ── */
+#ca-rackWrap{position:absolute;inset:0;z-index:8;pointer-events:none}
+#ca-rackBg{position:absolute;background-size:contain;background-repeat:no-repeat;background-position:center;pointer-events:none}
+#ca-rack{position:absolute;z-index:9}
+#ca-rack .ca-catch{position:absolute;display:flex;flex-direction:column;align-items:center}
+
+/* ── TEKSTURA PANELU ZASAD ── */
+.ca-rules-tex{position:absolute;inset:0;background-size:cover;background-position:center;border-radius:inherit;opacity:.25;pointer-events:none;z-index:0}
+.ca-rules-tex.has-img{opacity:.35}
+.ca-rules-inner{position:relative}
+.ca-rules-h,.ca-rules-body,.ca-rules-foot{position:relative;z-index:1}
+
+/* ── WĘDKARZ TRACI CIERPLIWOŚĆ ── */
+#ca-hero.annoyed .ca-body{animation:ca-annoyed .4s ease-in-out infinite}
+#ca-hero.angry .ca-body{animation:ca-angry .22s ease-in-out infinite}
+@keyframes ca-annoyed{0%,100%{transform:translateX(0)}25%{transform:translateX(-2px) rotate(-1deg)}75%{transform:translateX(2px) rotate(1deg)}}
+@keyframes ca-angry{0%,100%{transform:translateX(0) rotate(0)}20%{transform:translateX(-4px) rotate(-2deg)}40%{transform:translateX(4px) rotate(2deg)}60%{transform:translateX(-3px) rotate(-1deg)}80%{transform:translateX(3px) rotate(1deg)}}
+/* dymek wg nastroju */
+#ca-bubble.mood-annoyed{background:rgba(255,235,200,.98);color:#5a2a10}
+#ca-bubble.mood-annoyed::after{border-top-color:rgba(255,235,200,.98)}
+#ca-bubble.mood-angry{background:rgba(255,210,195,.98);color:#7a1010;border:1px solid rgba(190,30,20,.5)}
+#ca-bubble.mood-angry::after{border-top-color:rgba(255,210,195,.98)}
+
+/* ════════ WODA WOW (v3.5) ════════ */
+/* warstwa kaustyk — przesuwające się smugi światła */
+#ca-caustics{position:absolute;left:0;right:0;top:var(--ca-scene-h);bottom:0;z-index:4;pointer-events:none;mix-blend-mode:screen;opacity:.32;
+  background:
+    radial-gradient(ellipse 220px 90px at 20% 18%,rgba(150,230,255,.18),transparent 60%),
+    radial-gradient(ellipse 300px 120px at 65% 30%,rgba(120,210,240,.14),transparent 60%),
+    radial-gradient(ellipse 260px 100px at 85% 50%,rgba(150,230,255,.12),transparent 60%),
+    radial-gradient(ellipse 200px 80px at 40% 65%,rgba(120,200,235,.10),transparent 60%);
+  filter:blur(3px);animation:ca-caustic 16s ease-in-out infinite alternate}
+@keyframes ca-caustic{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,18px) scale(1.08)}100%{transform:translate(-30px,8px) scale(1.03)}}
+/* drugi pas kaustyk (inny rytm = głębia) */
+#ca-caustics2{position:absolute;left:0;right:0;top:var(--ca-scene-h);bottom:0;z-index:4;pointer-events:none;mix-blend-mode:screen;opacity:.18;
+  background:repeating-linear-gradient(115deg,transparent 0 60px,rgba(160,225,255,.10) 60px 90px,transparent 90px 170px);
+  filter:blur(5px);animation:ca-caustic2 21s linear infinite}
+@keyframes ca-caustic2{100%{transform:translateX(-120px)}}
+/* migotliwa linia powierzchni tuż pod belką */
+#ca-surface{position:absolute;left:0;right:0;top:calc(var(--ca-scene-h) + 16px);height:14px;z-index:5;pointer-events:none;
+  background:linear-gradient(180deg,rgba(150,235,255,.35),transparent);filter:blur(2px);
+  animation:ca-surface 5s ease-in-out infinite}
+@keyframes ca-surface{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:.75;transform:scaleY(1.5)}}
+/* plankton — drobinki dryfujące w toni */
+#ca-plankton{position:absolute;left:0;right:0;top:var(--ca-scene-h);bottom:0;z-index:5;pointer-events:none;overflow:hidden}
+.ca-mote{position:absolute;width:3px;height:3px;border-radius:50%;background:radial-gradient(circle,rgba(200,240,255,.8),rgba(150,210,240,.1));
+  animation:ca-mote linear infinite}
+@keyframes ca-mote{0%{transform:translate(0,0);opacity:0}10%{opacity:.7}90%{opacity:.6}100%{transform:translate(var(--mx,20px),-160px);opacity:0}}
+/* głębsza poświata (gradient warstwowy nad world) */
+#ca-depthGlow{position:absolute;left:0;right:0;top:var(--ca-scene-h);bottom:0;z-index:3;pointer-events:none;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(60,160,190,.22),transparent 70%)}
+
+/* ════════ CIEŃ WIESZAKA na deskę ════════ */
+#ca-rackShadow{position:absolute;z-index:7;pointer-events:none;
+  background:radial-gradient(ellipse 50% 80% at 50% 0%,rgba(0,0,0,.45),rgba(0,0,0,.18) 55%,transparent 80%);
+  filter:blur(4px)}
+.ca-catch{filter:drop-shadow(0 10px 6px rgba(0,0,0,.4))}
+/* ════════ FIX v3.7 — ZNACZNIK CZUBKA WĘDKI (żyłka trzyma się wędki) ════════ */
+/* Znacznik jest dzieckiem .ca-body → dziedziczy jej obrót/przesunięcie/scale. */
+#ca-rodtip{position:absolute;left:100%;top:0;width:0;height:0;pointer-events:none;z-index:1}
+/* DEBUG: czerwona kropka kalibracyjna — pokazuje się gdy DEBUG_MODE = ON */
+#ca-stage.dbgtip #ca-rodtip::after{content:"";position:absolute;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#ff2d2d;box-shadow:0 0 10px #ff2d2d,0 0 4px #fff;z-index:99}
+/* ════════ v4 ETAP 2 — REALIZM WODY + WIESZAK ════════ */
+/* MYŁ przy dnie — drobiny dryfujące nisko, cieplejszy odcień niż plankton */
+.ca-silt{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(180,150,110,.55),rgba(120,95,60,.08));
+  animation:ca-silt linear infinite;pointer-events:none}
+@keyframes ca-silt{0%{transform:translate(0,0);opacity:0}12%{opacity:.5}88%{opacity:.4}100%{transform:translate(var(--mx,12px),-70px);opacity:0}}
+
+/* większe/zmienne bąbelki — łagodniejszy ruch w górę z lekkim dryfem */
+.ca-bubbleUp{box-shadow:0 0 4px rgba(180,225,255,.35)}
+@keyframes ca-bubbleA{0%{transform:translateY(0) translateX(0) scale(.6);opacity:.75}
+  50%{transform:translateY(-80px) translateX(6px) scale(1)}
+  100%{transform:translateY(-170px) translateX(-4px) scale(1.15);opacity:0}}
+
+/* SHIMMER / refrakcja tuż pod powierzchnią — subtelna pozioma fala światła */
+#ca-world.rlm-shimmer #ca-surface{box-shadow:0 0 26px rgba(150,235,255,.25)}
+#ca-world.rlm-shimmer::after{content:"";position:absolute;left:0;right:0;
+  top:calc(var(--ca-scene-h) + var(--surf-gap, 0px));height:120px;z-index:5;pointer-events:none;mix-blend-mode:screen;opacity:.22;
+  background:repeating-linear-gradient(96deg,transparent 0 70px,rgba(160,230,255,.16) 70px 86px,transparent 86px 150px);
+  filter:blur(4px);animation:ca-shimmer 7s ease-in-out infinite}
+@keyframes ca-shimmer{0%,100%{transform:translateX(0) scaleY(1);opacity:.16}50%{transform:translateX(34px) scaleY(1.25);opacity:.3}}
+
+/* ════════ v4 ETAP 3 — ŻONA RYBAKA ════════ */
+#ca-wife{position:absolute;left:-220px;z-index:10;pointer-events:none;transition:left .8s cubic-bezier(.3,0,.3,1)}
+#ca-wife.in{animation:ca-wifeShake .55s ease-in-out infinite}
+@keyframes ca-wifeShake{0%,100%{transform:translateX(0) rotate(0)}25%{transform:translateX(-3px) rotate(-1.2deg)}75%{transform:translateX(3px) rotate(1.2deg)}}
+#ca-wife .ca-wife-body{width:100%;height:100%;background-size:contain;background-repeat:no-repeat;background-position:center bottom;filter:drop-shadow(0 8px 10px rgba(0,0,0,.55))}
+#ca-wife .ca-wife-bubble{position:absolute;bottom:88%;left:60%;transform:translateX(-50%);background:rgba(255,228,210,.98);color:#7a1010;font-family:'Cinzel';font-weight:800;font-size:16px;padding:8px 14px;border-radius:14px;border:1px solid rgba(190,30,20,.5);white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.5);opacity:0;transition:opacity .3s;max-width:440px;z-index:2}
+#ca-wife .ca-wife-bubble.show{opacity:1}
+#ca-wife .ca-wife-bubble::after{content:"";position:absolute;bottom:-9px;left:40%;transform:translateX(-50%);border:9px solid transparent;border-top-color:rgba(255,228,210,.98)}
+
+/* ════════ v5 ETAP 5A — SKALA 200 (obserwatorzy/sonar/licznik/tłum) ════════ */
+.ca-observer.hidden{display:none}
+.ca-observer.enter{animation:ca-obsEnter .45s cubic-bezier(.2,1.4,.4,1)}
+@keyframes ca-obsEnter{0%{opacity:0;transform:translateY(14px) scale(.7)}100%{opacity:1;transform:translateY(0) scale(1)}}
+/* SONAR: same kropki, bez nicków (gęstość = rozkład typów) */
+.ca-ml{display:none}
+.ca-dot{position:absolute;left:50%;width:9px;height:9px;border-radius:50%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle at 35% 30%,#dff4ff,#2b6f93);border:1px solid rgba(255,210,74,.5);box-shadow:0 0 4px rgba(120,200,255,.45)}
+.ca-dot.over{filter:grayscale(.7) brightness(.55);border-color:var(--ca-blood);box-shadow:none}
+.ca-dot.lead{width:13px;height:13px;border-color:#fff3c4;box-shadow:0 0 12px var(--ca-gold),0 0 22px var(--ca-gold);z-index:5}
+/* licznik typujących */
+#ca-typers{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);z-index:11;display:none;
+  font-family:'Cinzel';font-weight:800;font-size:15px;color:var(--ca-cream);background:rgba(2,10,18,.62);
+  border:1px solid rgba(120,180,210,.35);border-radius:18px;padding:5px 16px;letter-spacing:1px;text-shadow:1px 1px 0 #000;white-space:nowrap}
+/* statyczny tłum w tle (wrażenie skali; opacity steruje JS) */
+#ca-crowd{position:absolute;left:0;right:0;top:calc(var(--ca-scene-h) - 96px);height:96px;z-index:6;pointer-events:none;opacity:0;transition:opacity 1s;
+  background:repeating-linear-gradient(90deg,rgba(8,18,28,0) 0 6px,rgba(12,24,36,.55) 6px 12px,rgba(8,18,28,0) 12px 20px),
+    radial-gradient(ellipse 55% 80% at 25% 100%,rgba(10,22,34,.55),transparent 70%),
+    radial-gradient(ellipse 55% 80% at 65% 100%,rgba(10,22,34,.55),transparent 70%);
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 60%);mask-image:linear-gradient(180deg,transparent,#000 60%)}
