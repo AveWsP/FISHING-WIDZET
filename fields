@@ -1,0 +1,2649 @@
+{
+  "_g": {
+    "type": "hidden",
+    "label": "═══════ ⚙️ OGÓLNE ═══════"
+  },
+  "TITLE_MAIN": {
+    "type": "text",
+    "label": "Tytuł główny",
+    "value": "CALASSA ADVENTURE",
+    "group": "⚙️ Ogólne"
+  },
+  "TITLE_SUB": {
+    "type": "text",
+    "label": "Podtytuł",
+    "value": "Predykcja Głębin · Zatopione Miasto Quara",
+    "group": "⚙️ Ogólne"
+  },
+  "ADMIN_USERNAME": {
+    "type": "text",
+    "label": "Nick admina (małe litery)",
+    "value": "buuszek",
+    "group": "⚙️ Ogólne"
+  },
+  "MAX_DEPTH": {
+    "type": "number",
+    "label": "Maksymalna głębokość (m)",
+    "value": 200,
+    "min": 50,
+    "max": 1000,
+    "step": 10,
+    "group": "⚙️ Ogólne"
+  },
+  "SCENE_H": {
+    "type": "slider",
+    "label": "Wysokość grafiki tło+pomost (px)",
+    "value": 600,
+    "min": 300,
+    "max": 850,
+    "step": 10,
+    "group": "⚙️ Ogólne"
+  },
+  "WIDGET_SCALE": {
+    "type": "slider",
+    "label": "Skala całego widgetu (%)",
+    "value": 100,
+    "min": 50,
+    "max": 100,
+    "step": 1,
+    "group": "⚙️ Ogólne"
+  },
+  "TITLE_Y": {
+    "type": "slider",
+    "label": "Tytuł — pozycja Y (px)",
+    "value": 120,
+    "min": 0,
+    "max": 500,
+    "step": 5,
+    "group": "⚙️ Ogólne"
+  },
+  "TITLE_SIZE": {
+    "type": "slider",
+    "label": "Tytuł — rozmiar (px)",
+    "value": 46,
+    "min": 20,
+    "max": 90,
+    "step": 2,
+    "group": "⚙️ Ogólne"
+  },
+  "USE_KICK_AVATAR": {
+    "type": "checkbox",
+    "label": "Avatary z Kicka",
+    "value": true,
+    "group": "⚙️ Ogólne"
+  },
+  "FISH_ART": {
+    "type": "dropdown",
+    "label": "Grafiki ryb",
+    "value": "gif",
+    "options": {
+      "gif": "Moje GIF-y Tibii",
+      "svg": "Grafiki Claude (szczegółowe)"
+    },
+    "group": "⚙️ Ogólne"
+  },
+  "FISH_DENSITY": {
+    "type": "slider",
+    "label": "Gęstość ryb (%)",
+    "value": 100,
+    "min": 30,
+    "max": 250,
+    "step": 10,
+    "group": "⚙️ Ogólne"
+  },
+  "_c": {
+    "type": "hidden",
+    "label": "═══════ ⌨️ KOMENDY ═══════"
+  },
+  "CMD_GUESS": {
+    "type": "text",
+    "label": "Gracz: typowanie",
+    "value": "!łów",
+    "group": "⌨️ Komendy"
+  },
+  "CMD_MINE": {
+    "type": "text",
+    "label": "Gracz: statystyki",
+    "value": "!moje",
+    "group": "⌨️ Komendy"
+  },
+  "CMD_START": {
+    "type": "text",
+    "label": "Admin: otwórz",
+    "value": "!start",
+    "group": "⌨️ Komendy"
+  },
+  "CMD_LOCK": {
+    "type": "text",
+    "label": "Admin: zablokuj",
+    "value": "!zamknij",
+    "group": "⌨️ Komendy"
+  },
+  "CMD_DROP": {
+    "type": "text",
+    "label": "Admin: zanurz",
+    "value": "!zanurz",
+    "group": "⌨️ Komendy"
+  },
+  "CMD_IDLE": {
+    "type": "text",
+    "label": "Admin: idle",
+    "value": "!idle",
+    "group": "⌨️ Komendy"
+  },
+  "CMD_RULES": {
+    "type": "text",
+    "label": "Admin: pokaż zasady",
+    "value": "!zasady",
+    "group": "⌨️ Komendy"
+  },
+  "CMD_RESET": {
+    "type": "text",
+    "label": "Admin: pełny reset",
+    "value": "!reset",
+    "group": "⌨️ Komendy"
+  },
+  "CMD_DAILY": {
+    "type": "text",
+    "label": "Admin: reset dzienny",
+    "value": "!daily",
+    "group": "⌨️ Komendy"
+  },
+  "_t": {
+    "type": "hidden",
+    "label": "═══════ ⏱️ TEMPO (ms) ═══════"
+  },
+  "T_WALK": {
+    "type": "number",
+    "label": "Wejście wędkarza",
+    "value": 3400,
+    "min": 500,
+    "max": 8000,
+    "step": 100,
+    "group": "⏱️ Tempo"
+  },
+  "T_QUIP": {
+    "type": "number",
+    "label": "Chmurka przed rzutem",
+    "value": 1900,
+    "min": 500,
+    "max": 6000,
+    "step": 100,
+    "group": "⏱️ Tempo"
+  },
+  "T_CAST": {
+    "type": "number",
+    "label": "Rzut",
+    "value": 850,
+    "min": 300,
+    "max": 2000,
+    "step": 50,
+    "group": "⏱️ Tempo"
+  },
+  "T_SCOUT": {
+    "type": "number",
+    "label": "Faza zwiadu (~15m)",
+    "value": 4500,
+    "min": 1000,
+    "max": 8000,
+    "step": 100,
+    "group": "⏱️ Tempo"
+  },
+  "T_SINK": {
+    "type": "number",
+    "label": "Tonięcie do brania",
+    "value": 7000,
+    "min": 1500,
+    "max": 14000,
+    "step": 100,
+    "group": "⏱️ Tempo"
+  },
+  "T_TEASE": {
+    "type": "number",
+    "label": "Czas jednego fałszywego brania (ms)",
+    "value": 2600,
+    "min": 800,
+    "max": 6000,
+    "step": 100,
+    "group": "⏱️ Tempo"
+  },
+  "FALSE_BITES": {
+    "type": "number",
+    "label": "Ile fałszywych brań przed prawdziwym",
+    "value": 3,
+    "min": 0,
+    "max": 8,
+    "step": 1,
+    "group": "⏱️ Tempo"
+  },
+  "T_FIGHT_BEAT": {
+    "type": "number",
+    "label": "Długość manewru walki",
+    "value": 1300,
+    "min": 400,
+    "max": 3000,
+    "step": 50,
+    "group": "⏱️ Tempo"
+  },
+  "T_REVEAL_HOLD": {
+    "type": "number",
+    "label": "Karta reveal",
+    "value": 5000,
+    "min": 1500,
+    "max": 12000,
+    "step": 100,
+    "group": "⏱️ Tempo"
+  },
+  "ZOOM_FIGHT": {
+    "type": "number",
+    "label": "Zbliżenie w walce",
+    "value": 1.5,
+    "min": 1,
+    "max": 2.2,
+    "step": 0.05,
+    "group": "⏱️ Tempo"
+  },
+  "_o": {
+    "type": "hidden",
+    "label": "═══════ 🎲 SZANSE GATUNKÓW (%) ═══════"
+  },
+  "CH_FISH": {
+    "type": "number",
+    "label": "Fish (%)",
+    "value": 45,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🎲 Szanse"
+  },
+  "CH_PERCH": {
+    "type": "number",
+    "label": "Green Perch (%)",
+    "value": 25,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🎲 Szanse"
+  },
+  "CH_PIKE": {
+    "type": "number",
+    "label": "Northern Pike (%)",
+    "value": 16,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🎲 Szanse"
+  },
+  "CH_TROUT": {
+    "type": "number",
+    "label": "Rainbow Trout (%)",
+    "value": 8,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🎲 Szanse"
+  },
+  "CH_SERPENT": {
+    "type": "number",
+    "label": "Sea Serpent (%)",
+    "value": 5,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🎲 Szanse"
+  },
+  "CH_QUARA": {
+    "type": "number",
+    "label": "Quara (%)",
+    "value": 1,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🎲 Szanse"
+  },
+  "CH_MINNOW": {
+    "type": "number",
+    "label": "Płotka (%)",
+    "value": 35,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🎲 Szanse"
+  },
+  "CH_MARLIN": {
+    "type": "number",
+    "label": "Marlin (%)",
+    "value": 3,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🎲 Szanse"
+  },
+  "_ev": {
+    "type": "hidden",
+    "label": "═══════ 🎣 ZDARZENIA (%) ═══════"
+  },
+  "EV_SNAP": {
+    "type": "number",
+    "label": "Zerwana żyłka (%)",
+    "value": 3,
+    "min": 0,
+    "max": 50,
+    "step": 1,
+    "group": "🎣 Zdarzenia"
+  },
+  "EV_DOUBLE": {
+    "type": "number",
+    "label": "Podwójne branie (%)",
+    "value": 4,
+    "min": 0,
+    "max": 50,
+    "step": 1,
+    "group": "🎣 Zdarzenia"
+  },
+  "PREDATOR_CHANCE": {
+    "type": "number",
+    "label": "Atak drapieżnika podczas walki (%)",
+    "value": 8,
+    "min": 0,
+    "max": 60,
+    "step": 1,
+    "group": "🎣 Zdarzenia"
+  },
+  "SUB_TOLERANCE": {
+    "type": "number",
+    "label": "Tolerancja suba (m)",
+    "value": 5,
+    "min": 0,
+    "max": 50,
+    "step": 1,
+    "group": "🎣 Zdarzenia"
+  },
+  "_w": {
+    "type": "hidden",
+    "label": "═══════ 🌦️ POGODA ═══════"
+  },
+  "WEATHER_ON": {
+    "type": "checkbox",
+    "label": "System pogodowy",
+    "value": true,
+    "group": "🌦️ Pogoda"
+  },
+  "W_SUN": {
+    "type": "number",
+    "label": "Słońce (waga losowania)",
+    "value": 50,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🌦️ Pogoda"
+  },
+  "W_STORM": {
+    "type": "number",
+    "label": "Sztorm (waga)",
+    "value": 20,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🌦️ Pogoda"
+  },
+  "W_FOG": {
+    "type": "number",
+    "label": "Mgła (waga)",
+    "value": 18,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🌦️ Pogoda"
+  },
+  "W_NIGHT": {
+    "type": "number",
+    "label": "Noc (waga) — potwory częściej",
+    "value": 12,
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "group": "🌦️ Pogoda"
+  },
+  "_rules": {
+    "type": "hidden",
+    "label": "═══════ 📖 ZASADY ═══════"
+  },
+  "RULES_GAMES": {
+    "type": "number",
+    "label": "Pokaż zasady przez pierwsze N gier dnia",
+    "value": 3,
+    "min": 0,
+    "max": 20,
+    "step": 1,
+    "group": "📖 Zasady"
+  },
+  "RULES_DURATION": {
+    "type": "number",
+    "label": "Czas panelu zasad (ms)",
+    "value": 10000,
+    "min": 3000,
+    "max": 30000,
+    "step": 500,
+    "group": "📖 Zasady"
+  },
+  "RULES_TITLE": {
+    "type": "text",
+    "label": "Tytuł panelu zasad",
+    "value": "JAK GRAĆ — ŁOWY CALASSY",
+    "group": "📖 Zasady"
+  },
+  "RULES_INTRO": {
+    "type": "text",
+    "label": "Wstęp (nad listą)",
+    "value": "Zgadnij na jakiej głębokości ryba weźmie przynętę!",
+    "group": "📖 Zasady"
+  },
+  "RULES_L1": {
+    "type": "text",
+    "label": "Zasada 1",
+    "value": "Wpisz !łów <metry> (np. !łów 47)",
+    "group": "📖 Zasady"
+  },
+  "RULES_L2": {
+    "type": "text",
+    "label": "Zasada 2",
+    "value": "Wygrywa najwyższy typ, który NIE przekroczył brania",
+    "group": "📖 Zasady"
+  },
+  "RULES_L3": {
+    "type": "text",
+    "label": "Zasada 3",
+    "value": "Za głęboko = toniesz w mroku",
+    "group": "📖 Zasady"
+  },
+  "RULES_L4": {
+    "type": "text",
+    "label": "Zasada 4",
+    "value": "Głębiej = rzadsze ryby i większe TC",
+    "group": "📖 Zasady"
+  },
+  "RULES_L5": {
+    "type": "text",
+    "label": "Zasada 5",
+    "value": "Subskrybenci: tolerancja +5 m",
+    "group": "📖 Zasady"
+  },
+  "RULES_FOOT": {
+    "type": "text",
+    "label": "Stopka",
+    "value": "Łowienie zaczyna się za chwilę...",
+    "group": "📖 Zasady"
+  },
+  "RULES_TEXTURE": {
+    "type": "image-input",
+    "label": "Tekstura tła panelu zasad",
+    "value": "",
+    "group": "📖 Zasady"
+  },
+  "_rack": {
+    "type": "hidden",
+    "label": "═══════ 🎏 WIESZAK POŁOWÓW ═══════"
+  },
+  "RACK_SHOW": {
+    "type": "checkbox",
+    "label": "Pokaż wieszak",
+    "value": true,
+    "group": "🎏 Wieszak"
+  },
+  "HANG_COUNT": {
+    "type": "number",
+    "label": "Ile połowów wisi (N)",
+    "value": 5,
+    "min": 1,
+    "max": 12,
+    "step": 1,
+    "group": "🎏 Wieszak"
+  },
+  "RACK_IMG": {
+    "type": "image-input",
+    "label": "Grafika wieszaka/stołu (tło)",
+    "value": "",
+    "group": "🎏 Wieszak"
+  },
+  "RACK_X_POS": {
+    "type": "slider",
+    "label": "Wieszak: pozycja X",
+    "value": 620,
+    "min": 0,
+    "max": 1900,
+    "step": 10,
+    "group": "🎏 Wieszak"
+  },
+  "RACK_W": {
+    "type": "slider",
+    "label": "Wieszak (tło): szerokość",
+    "value": 680,
+    "min": 100,
+    "max": 1600,
+    "step": 10,
+    "group": "🎏 Wieszak"
+  },
+  "RACK_H": {
+    "type": "slider",
+    "label": "Wieszak (tło): wysokość",
+    "value": 200,
+    "min": 60,
+    "max": 600,
+    "step": 10,
+    "group": "🎏 Wieszak"
+  },
+  "RACK_Y_POS": {
+    "type": "slider",
+    "label": "Wieszak: pozycja Y",
+    "value": 430,
+    "min": 0,
+    "max": 1050,
+    "step": 10,
+    "group": "🎏 Wieszak"
+  },
+  "RACK_SLOT1_X": {
+    "type": "slider",
+    "label": "Ryby: pozycja 1. (prawy slot) X",
+    "value": 1180,
+    "min": 0,
+    "max": 1900,
+    "step": 5,
+    "group": "🎏 Wieszak"
+  },
+  "RACK_SLOT_GAP": {
+    "type": "slider",
+    "label": "Ryby: odstęp w lewo (px)",
+    "value": 90,
+    "min": 20,
+    "max": 300,
+    "step": 5,
+    "group": "🎏 Wieszak"
+  },
+  "RACK_SLOT_Y": {
+    "type": "slider",
+    "label": "Ryby: wysokość Y",
+    "value": 430,
+    "min": 0,
+    "max": 1050,
+    "step": 5,
+    "group": "🎏 Wieszak"
+  },
+  "RACK_FISH_SZ": {
+    "type": "slider",
+    "label": "Ryby: rozmiar (px)",
+    "value": 64,
+    "min": 20,
+    "max": 160,
+    "step": 2,
+    "group": "🎏 Wieszak"
+  },
+  "_worm": {
+    "type": "hidden",
+    "label": "═══════ 🪱 ROBAK ═══════"
+  },
+  "WORM_ON": {
+    "type": "checkbox",
+    "label": "Robak na haczyku",
+    "value": true,
+    "group": "🪱 Robak"
+  },
+  "WORM_GIF": {
+    "type": "image-input",
+    "label": "GIF robaka",
+    "value": "",
+    "group": "🪱 Robak"
+  },
+  "_f1": {
+    "type": "hidden",
+    "label": "═══════ 🐟 FISH ═══════"
+  },
+  "F1_NAME": {
+    "type": "text",
+    "label": "Nazwa",
+    "value": "Fish",
+    "group": "🐟 Fish"
+  },
+  "F1_TC": {
+    "type": "number",
+    "label": "Nagroda TC",
+    "value": 25,
+    "min": 0,
+    "step": 1,
+    "group": "🐟 Fish"
+  },
+  "F1_DMIN": {
+    "type": "number",
+    "label": "Głębokość min (szerokie strefy!)",
+    "value": 5,
+    "min": 0,
+    "step": 1,
+    "group": "🐟 Fish"
+  },
+  "F1_DMAX": {
+    "type": "number",
+    "label": "Głębokość max",
+    "value": 90,
+    "min": 0,
+    "step": 1,
+    "group": "🐟 Fish"
+  },
+  "F1_WMIN": {
+    "type": "number",
+    "label": "Waga min (kg)",
+    "value": 0.3,
+    "min": 0,
+    "step": 0.1,
+    "group": "🐟 Fish"
+  },
+  "F1_WMAX": {
+    "type": "number",
+    "label": "Waga max (kg)",
+    "value": 1.2,
+    "min": 0,
+    "step": 0.1,
+    "group": "🐟 Fish"
+  },
+  "F1_STAMINA": {
+    "type": "number",
+    "label": "Wytrzymałość",
+    "value": 2,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "group": "🐟 Fish"
+  },
+  "F1_TILT": {
+    "type": "slider",
+    "label": "Nachylenie GIF (°)",
+    "value": 0,
+    "min": -180,
+    "max": 180,
+    "step": 5,
+    "group": "🐟 Fish"
+  },
+  "F1_FACING": {
+    "type": "dropdown",
+    "label": "GIF domyślnie patrzy w...",
+    "value": "right",
+    "options": {
+      "right": "prawo →",
+      "left": "← lewo"
+    },
+    "group": "🐟 Fish"
+  },
+  "F1_DIR": {
+    "type": "dropdown",
+    "label": "Kierunek pływania",
+    "value": "random",
+    "options": {
+      "right": "zawsze →",
+      "left": "← zawsze",
+      "random": "losowo (miks)"
+    },
+    "group": "🐟 Fish"
+  },
+  "F1_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar ryby (px)",
+    "value": 40,
+    "min": 20,
+    "max": 220,
+    "step": 2,
+    "group": "🐟 Fish"
+  },
+  "F1_REVEAL_X": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja X (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🐟 Fish"
+  },
+  "F1_REVEAL_Y": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja Y (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🐟 Fish"
+  },
+  "F1_REVEAL_SCALE": {
+    "type": "slider",
+    "label": "Karta reveal: skala (%)",
+    "value": 100,
+    "min": 20,
+    "max": 250,
+    "step": 5,
+    "group": "🐟 Fish"
+  },
+  "F1_GIF": {
+    "type": "image-input",
+    "label": "GIF pływania",
+    "value": "",
+    "group": "🐟 Fish"
+  },
+  "F1_REVEAL": {
+    "type": "image-input",
+    "label": "Grafika reveal (karta)",
+    "value": "",
+    "group": "🐟 Fish"
+  },
+  "F1_IS_PREDATOR": {
+    "type": "checkbox",
+    "label": "Jest drapieżnikiem?",
+    "value": false,
+    "group": "🐟 Fish"
+  },
+  "F1_EATS": {
+    "type": "text",
+    "label": "Zjada (klucze: fish,perch,pike,trout,serpent,quara)",
+    "value": "",
+    "group": "🐟 Fish"
+  },
+  "_f2": {
+    "type": "hidden",
+    "label": "═══════ 🐠 GREEN PERCH ═══════"
+  },
+  "F2_NAME": {
+    "type": "text",
+    "label": "Nazwa",
+    "value": "Green Perch",
+    "group": "🐠 Green Perch"
+  },
+  "F2_TC": {
+    "type": "number",
+    "label": "Nagroda TC",
+    "value": 35,
+    "min": 0,
+    "step": 1,
+    "group": "🐠 Green Perch"
+  },
+  "F2_DMIN": {
+    "type": "number",
+    "label": "Głębokość min",
+    "value": 15,
+    "min": 0,
+    "step": 1,
+    "group": "🐠 Green Perch"
+  },
+  "F2_DMAX": {
+    "type": "number",
+    "label": "Głębokość max",
+    "value": 120,
+    "min": 0,
+    "step": 1,
+    "group": "🐠 Green Perch"
+  },
+  "F2_WMIN": {
+    "type": "number",
+    "label": "Waga min",
+    "value": 0.5,
+    "min": 0,
+    "step": 0.1,
+    "group": "🐠 Green Perch"
+  },
+  "F2_WMAX": {
+    "type": "number",
+    "label": "Waga max",
+    "value": 2.2,
+    "min": 0,
+    "step": 0.1,
+    "group": "🐠 Green Perch"
+  },
+  "F2_STAMINA": {
+    "type": "number",
+    "label": "Wytrzymałość",
+    "value": 3,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "group": "🐠 Green Perch"
+  },
+  "F2_TILT": {
+    "type": "slider",
+    "label": "Nachylenie GIF (°)",
+    "value": 0,
+    "min": -180,
+    "max": 180,
+    "step": 5,
+    "group": "🐠 Green Perch"
+  },
+  "F2_FACING": {
+    "type": "dropdown",
+    "label": "GIF domyślnie patrzy w...",
+    "value": "right",
+    "options": {
+      "right": "prawo →",
+      "left": "← lewo"
+    },
+    "group": "🐠 Green Perch"
+  },
+  "F2_DIR": {
+    "type": "dropdown",
+    "label": "Kierunek pływania",
+    "value": "random",
+    "options": {
+      "right": "zawsze →",
+      "left": "← zawsze",
+      "random": "losowo (miks)"
+    },
+    "group": "🐠 Green Perch"
+  },
+  "F2_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar ryby (px)",
+    "value": 46,
+    "min": 20,
+    "max": 220,
+    "step": 2,
+    "group": "🐠 Green Perch"
+  },
+  "F2_REVEAL_X": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja X (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🐠 Green Perch"
+  },
+  "F2_REVEAL_Y": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja Y (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🐠 Green Perch"
+  },
+  "F2_REVEAL_SCALE": {
+    "type": "slider",
+    "label": "Karta reveal: skala (%)",
+    "value": 100,
+    "min": 20,
+    "max": 250,
+    "step": 5,
+    "group": "🐠 Green Perch"
+  },
+  "F2_GIF": {
+    "type": "image-input",
+    "label": "GIF pływania",
+    "value": "",
+    "group": "🐠 Green Perch"
+  },
+  "F2_REVEAL": {
+    "type": "image-input",
+    "label": "Grafika reveal",
+    "value": "",
+    "group": "🐠 Green Perch"
+  },
+  "F2_IS_PREDATOR": {
+    "type": "checkbox",
+    "label": "Jest drapieżnikiem?",
+    "value": false,
+    "group": "🐠 Green Perch"
+  },
+  "F2_EATS": {
+    "type": "text",
+    "label": "Zjada",
+    "value": "",
+    "group": "🐠 Green Perch"
+  },
+  "_f3": {
+    "type": "hidden",
+    "label": "═══════ 🐡 NORTHERN PIKE ═══════"
+  },
+  "F3_NAME": {
+    "type": "text",
+    "label": "Nazwa",
+    "value": "Northern Pike",
+    "group": "🐡 Northern Pike"
+  },
+  "F3_TC": {
+    "type": "number",
+    "label": "Nagroda TC",
+    "value": 60,
+    "min": 0,
+    "step": 1,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_DMIN": {
+    "type": "number",
+    "label": "Głębokość min",
+    "value": 30,
+    "min": 0,
+    "step": 1,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_DMAX": {
+    "type": "number",
+    "label": "Głębokość max",
+    "value": 150,
+    "min": 0,
+    "step": 1,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_WMIN": {
+    "type": "number",
+    "label": "Waga min",
+    "value": 4,
+    "min": 0,
+    "step": 0.1,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_WMAX": {
+    "type": "number",
+    "label": "Waga max",
+    "value": 14,
+    "min": 0,
+    "step": 0.1,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_STAMINA": {
+    "type": "number",
+    "label": "Wytrzymałość",
+    "value": 5,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_TILT": {
+    "type": "slider",
+    "label": "Nachylenie GIF (°)",
+    "value": 0,
+    "min": -180,
+    "max": 180,
+    "step": 5,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_FACING": {
+    "type": "dropdown",
+    "label": "GIF domyślnie patrzy w...",
+    "value": "right",
+    "options": {
+      "right": "prawo →",
+      "left": "← lewo"
+    },
+    "group": "🐡 Northern Pike"
+  },
+  "F3_DIR": {
+    "type": "dropdown",
+    "label": "Kierunek pływania",
+    "value": "random",
+    "options": {
+      "right": "zawsze →",
+      "left": "← zawsze",
+      "random": "losowo (miks)"
+    },
+    "group": "🐡 Northern Pike"
+  },
+  "F3_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar ryby (px)",
+    "value": 70,
+    "min": 20,
+    "max": 220,
+    "step": 2,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_REVEAL_X": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja X (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_REVEAL_Y": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja Y (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_REVEAL_SCALE": {
+    "type": "slider",
+    "label": "Karta reveal: skala (%)",
+    "value": 100,
+    "min": 20,
+    "max": 250,
+    "step": 5,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_GIF": {
+    "type": "image-input",
+    "label": "GIF pływania",
+    "value": "",
+    "group": "🐡 Northern Pike"
+  },
+  "F3_REVEAL": {
+    "type": "image-input",
+    "label": "Grafika reveal",
+    "value": "",
+    "group": "🐡 Northern Pike"
+  },
+  "F3_IS_PREDATOR": {
+    "type": "checkbox",
+    "label": "Jest drapieżnikiem?",
+    "value": false,
+    "group": "🐡 Northern Pike"
+  },
+  "F3_EATS": {
+    "type": "text",
+    "label": "Zjada",
+    "value": "",
+    "group": "🐡 Northern Pike"
+  },
+  "_f4": {
+    "type": "hidden",
+    "label": "═══════ 🌈 RAINBOW TROUT ═══════"
+  },
+  "F4_NAME": {
+    "type": "text",
+    "label": "Nazwa",
+    "value": "Rainbow Trout",
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_TC": {
+    "type": "number",
+    "label": "Nagroda TC",
+    "value": 80,
+    "min": 0,
+    "step": 1,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_DMIN": {
+    "type": "number",
+    "label": "Głębokość min",
+    "value": 25,
+    "min": 0,
+    "step": 1,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_DMAX": {
+    "type": "number",
+    "label": "Głębokość max",
+    "value": 130,
+    "min": 0,
+    "step": 1,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_WMIN": {
+    "type": "number",
+    "label": "Waga min",
+    "value": 1,
+    "min": 0,
+    "step": 0.1,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_WMAX": {
+    "type": "number",
+    "label": "Waga max",
+    "value": 5,
+    "min": 0,
+    "step": 0.1,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_STAMINA": {
+    "type": "number",
+    "label": "Wytrzymałość",
+    "value": 6,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_TILT": {
+    "type": "slider",
+    "label": "Nachylenie GIF (°)",
+    "value": 0,
+    "min": -180,
+    "max": 180,
+    "step": 5,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_FACING": {
+    "type": "dropdown",
+    "label": "GIF domyślnie patrzy w...",
+    "value": "right",
+    "options": {
+      "right": "prawo →",
+      "left": "← lewo"
+    },
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_DIR": {
+    "type": "dropdown",
+    "label": "Kierunek pływania",
+    "value": "random",
+    "options": {
+      "right": "zawsze →",
+      "left": "← zawsze",
+      "random": "losowo (miks)"
+    },
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar ryby (px)",
+    "value": 58,
+    "min": 20,
+    "max": 220,
+    "step": 2,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_REVEAL_X": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja X (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_REVEAL_Y": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja Y (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_REVEAL_SCALE": {
+    "type": "slider",
+    "label": "Karta reveal: skala (%)",
+    "value": 100,
+    "min": 20,
+    "max": 250,
+    "step": 5,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_GIF": {
+    "type": "image-input",
+    "label": "GIF pływania",
+    "value": "",
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_REVEAL": {
+    "type": "image-input",
+    "label": "Grafika reveal",
+    "value": "",
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_IS_PREDATOR": {
+    "type": "checkbox",
+    "label": "Jest drapieżnikiem?",
+    "value": false,
+    "group": "🌈 Rainbow Trout"
+  },
+  "F4_EATS": {
+    "type": "text",
+    "label": "Zjada",
+    "value": "",
+    "group": "🌈 Rainbow Trout"
+  },
+  "_f5": {
+    "type": "hidden",
+    "label": "═══════ 🐍 SEA SERPENT ═══════"
+  },
+  "F5_NAME": {
+    "type": "text",
+    "label": "Nazwa",
+    "value": "Sea Serpent",
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_TC": {
+    "type": "number",
+    "label": "Nagroda TC",
+    "value": 120,
+    "min": 0,
+    "step": 1,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_DMIN": {
+    "type": "number",
+    "label": "Głębokość min",
+    "value": 90,
+    "min": 0,
+    "step": 1,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_DMAX": {
+    "type": "number",
+    "label": "Głębokość max",
+    "value": 200,
+    "min": 0,
+    "step": 1,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_WMIN": {
+    "type": "number",
+    "label": "Waga min",
+    "value": 18,
+    "min": 0,
+    "step": 0.1,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_WMAX": {
+    "type": "number",
+    "label": "Waga max",
+    "value": 40,
+    "min": 0,
+    "step": 0.1,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_STAMINA": {
+    "type": "number",
+    "label": "Wytrzymałość",
+    "value": 8,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_TILT": {
+    "type": "slider",
+    "label": "Nachylenie GIF (°)",
+    "value": 0,
+    "min": -180,
+    "max": 180,
+    "step": 5,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_FACING": {
+    "type": "dropdown",
+    "label": "GIF domyślnie patrzy w...",
+    "value": "right",
+    "options": {
+      "right": "prawo →",
+      "left": "← lewo"
+    },
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_DIR": {
+    "type": "dropdown",
+    "label": "Kierunek pływania",
+    "value": "random",
+    "options": {
+      "right": "zawsze →",
+      "left": "← zawsze",
+      "random": "losowo (miks)"
+    },
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar ryby (px)",
+    "value": 96,
+    "min": 20,
+    "max": 220,
+    "step": 2,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_REVEAL_X": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja X (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_REVEAL_Y": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja Y (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_REVEAL_SCALE": {
+    "type": "slider",
+    "label": "Karta reveal: skala (%)",
+    "value": 100,
+    "min": 20,
+    "max": 250,
+    "step": 5,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_GIF": {
+    "type": "image-input",
+    "label": "GIF pływania",
+    "value": "",
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_REVEAL": {
+    "type": "image-input",
+    "label": "Grafika reveal",
+    "value": "",
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_IS_PREDATOR": {
+    "type": "checkbox",
+    "label": "Jest drapieżnikiem? (np. zjada pike)",
+    "value": true,
+    "group": "🐍 Sea Serpent"
+  },
+  "F5_EATS": {
+    "type": "text",
+    "label": "Zjada",
+    "value": "pike,trout",
+    "group": "🐍 Sea Serpent"
+  },
+  "_f6": {
+    "type": "hidden",
+    "label": "═══════ 🦑 QUARA (POTWÓR) ═══════"
+  },
+  "F6_NAME": {
+    "type": "text",
+    "label": "Nazwa",
+    "value": "Quara Predator",
+    "group": "🦑 Quara"
+  },
+  "F6_TC": {
+    "type": "number",
+    "label": "Nagroda TC (JACKPOT)",
+    "value": 150,
+    "min": 0,
+    "step": 1,
+    "group": "🦑 Quara"
+  },
+  "F6_DMIN": {
+    "type": "number",
+    "label": "Głębokość min",
+    "value": 110,
+    "min": 0,
+    "step": 1,
+    "group": "🦑 Quara"
+  },
+  "F6_DMAX": {
+    "type": "number",
+    "label": "Głębokość max",
+    "value": 200,
+    "min": 0,
+    "step": 1,
+    "group": "🦑 Quara"
+  },
+  "F6_WMIN": {
+    "type": "number",
+    "label": "Waga min",
+    "value": 60,
+    "min": 0,
+    "step": 0.1,
+    "group": "🦑 Quara"
+  },
+  "F6_WMAX": {
+    "type": "number",
+    "label": "Waga max",
+    "value": 180,
+    "min": 0,
+    "step": 0.1,
+    "group": "🦑 Quara"
+  },
+  "F6_STAMINA": {
+    "type": "number",
+    "label": "Wytrzymałość",
+    "value": 10,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "group": "🦑 Quara"
+  },
+  "F6_TILT": {
+    "type": "slider",
+    "label": "Nachylenie GIF (°)",
+    "value": 0,
+    "min": -180,
+    "max": 180,
+    "step": 5,
+    "group": "🦑 Quara"
+  },
+  "F6_FACING": {
+    "type": "dropdown",
+    "label": "GIF domyślnie patrzy w...",
+    "value": "right",
+    "options": {
+      "right": "prawo →",
+      "left": "← lewo"
+    },
+    "group": "🦑 Quara"
+  },
+  "F6_DIR": {
+    "type": "dropdown",
+    "label": "Kierunek pływania",
+    "value": "random",
+    "options": {
+      "right": "zawsze →",
+      "left": "← zawsze",
+      "random": "losowo (miks)"
+    },
+    "group": "🦑 Quara"
+  },
+  "F6_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar ryby (px)",
+    "value": 104,
+    "min": 20,
+    "max": 220,
+    "step": 2,
+    "group": "🦑 Quara"
+  },
+  "F6_REVEAL_X": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja X (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🦑 Quara"
+  },
+  "F6_REVEAL_Y": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja Y (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🦑 Quara"
+  },
+  "F6_REVEAL_SCALE": {
+    "type": "slider",
+    "label": "Karta reveal: skala (%)",
+    "value": 100,
+    "min": 20,
+    "max": 250,
+    "step": 5,
+    "group": "🦑 Quara"
+  },
+  "F6_GIF": {
+    "type": "image-input",
+    "label": "GIF pływania",
+    "value": "",
+    "group": "🦑 Quara"
+  },
+  "F6_REVEAL": {
+    "type": "image-input",
+    "label": "Grafika reveal",
+    "value": "",
+    "group": "🦑 Quara"
+  },
+  "F6_IS_PREDATOR": {
+    "type": "checkbox",
+    "label": "Jest drapieżnikiem? (zjada wszystko)",
+    "value": true,
+    "group": "🦑 Quara"
+  },
+  "F6_EATS": {
+    "type": "text",
+    "label": "Zjada",
+    "value": "fish,perch,pike,trout,serpent",
+    "group": "🦑 Quara"
+  },
+  "USE_API_MONSTER": {
+    "type": "checkbox",
+    "label": "Pobieraj potwory z TibiaData API (fallback: reveal powyżej)",
+    "value": true,
+    "group": "🦑 Quara"
+  },
+  "_f7": {
+    "type": "hidden",
+    "label": "═══════ 🐟 PŁOTKA ═══════"
+  },
+  "F7_NAME": {
+    "type": "text",
+    "label": "Nazwa",
+    "value": "Płotka",
+    "group": "🐟 Płotka"
+  },
+  "F7_TC": {
+    "type": "number",
+    "label": "Nagroda TC",
+    "value": 15,
+    "min": 0,
+    "step": 1,
+    "group": "🐟 Płotka"
+  },
+  "F7_DMIN": {
+    "type": "number",
+    "label": "Głębokość min",
+    "value": 3,
+    "min": 0,
+    "step": 1,
+    "group": "🐟 Płotka"
+  },
+  "F7_DMAX": {
+    "type": "number",
+    "label": "Głębokość max",
+    "value": 40,
+    "min": 0,
+    "step": 1,
+    "group": "🐟 Płotka"
+  },
+  "F7_WMIN": {
+    "type": "number",
+    "label": "Waga min (kg)",
+    "value": 0.1,
+    "min": 0,
+    "step": 0.1,
+    "group": "🐟 Płotka"
+  },
+  "F7_WMAX": {
+    "type": "number",
+    "label": "Waga max (kg)",
+    "value": 0.6,
+    "min": 0,
+    "step": 0.1,
+    "group": "🐟 Płotka"
+  },
+  "F7_STAMINA": {
+    "type": "number",
+    "label": "Wytrzymałość",
+    "value": 2,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "group": "🐟 Płotka"
+  },
+  "F7_TILT": {
+    "type": "slider",
+    "label": "Nachylenie GIF (°)",
+    "value": 0,
+    "min": -180,
+    "max": 180,
+    "step": 5,
+    "group": "🐟 Płotka"
+  },
+  "F7_FACING": {
+    "type": "dropdown",
+    "label": "GIF domyślnie patrzy w...",
+    "value": "right",
+    "options": {
+      "right": "prawo →",
+      "left": "← lewo"
+    },
+    "group": "🐟 Płotka"
+  },
+  "F7_DIR": {
+    "type": "dropdown",
+    "label": "Kierunek pływania",
+    "value": "random",
+    "options": {
+      "right": "zawsze →",
+      "left": "← zawsze",
+      "random": "losowo (miks)"
+    },
+    "group": "🐟 Płotka"
+  },
+  "F7_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar ryby (px)",
+    "value": 32,
+    "min": 20,
+    "max": 220,
+    "step": 2,
+    "group": "🐟 Płotka"
+  },
+  "F7_GIF": {
+    "type": "image-input",
+    "label": "GIF pływania",
+    "value": "",
+    "group": "🐟 Płotka"
+  },
+  "F7_REVEAL": {
+    "type": "image-input",
+    "label": "Grafika reveal (karta)",
+    "value": "",
+    "group": "🐟 Płotka"
+  },
+  "F7_REVEAL_X": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja X (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🐟 Płotka"
+  },
+  "F7_REVEAL_Y": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja Y (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🐟 Płotka"
+  },
+  "F7_REVEAL_SCALE": {
+    "type": "slider",
+    "label": "Karta reveal: skala (%)",
+    "value": 100,
+    "min": 20,
+    "max": 250,
+    "step": 5,
+    "group": "🐟 Płotka"
+  },
+  "F7_IS_PREDATOR": {
+    "type": "checkbox",
+    "label": "Jest drapieżnikiem?",
+    "value": false,
+    "group": "🐟 Płotka"
+  },
+  "F7_EATS": {
+    "type": "text",
+    "label": "Zjada (klucze: fish,perch,pike,trout,serpent,quara,minnow,marlin)",
+    "value": "",
+    "group": "🐟 Płotka"
+  },
+  "_f8": {
+    "type": "hidden",
+    "label": "═══════ 🗡️ MARLIN ═══════"
+  },
+  "F8_NAME": {
+    "type": "text",
+    "label": "Nazwa",
+    "value": "Marlin",
+    "group": "🗡️ Marlin"
+  },
+  "F8_TC": {
+    "type": "number",
+    "label": "Nagroda TC",
+    "value": 140,
+    "min": 0,
+    "step": 1,
+    "group": "🗡️ Marlin"
+  },
+  "F8_DMIN": {
+    "type": "number",
+    "label": "Głębokość min",
+    "value": 100,
+    "min": 0,
+    "step": 1,
+    "group": "🗡️ Marlin"
+  },
+  "F8_DMAX": {
+    "type": "number",
+    "label": "Głębokość max",
+    "value": 200,
+    "min": 0,
+    "step": 1,
+    "group": "🗡️ Marlin"
+  },
+  "F8_WMIN": {
+    "type": "number",
+    "label": "Waga min (kg)",
+    "value": 30,
+    "min": 0,
+    "step": 0.1,
+    "group": "🗡️ Marlin"
+  },
+  "F8_WMAX": {
+    "type": "number",
+    "label": "Waga max (kg)",
+    "value": 90,
+    "min": 0,
+    "step": 0.1,
+    "group": "🗡️ Marlin"
+  },
+  "F8_STAMINA": {
+    "type": "number",
+    "label": "Wytrzymałość",
+    "value": 9,
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "group": "🗡️ Marlin"
+  },
+  "F8_TILT": {
+    "type": "slider",
+    "label": "Nachylenie GIF (°)",
+    "value": 0,
+    "min": -180,
+    "max": 180,
+    "step": 5,
+    "group": "🗡️ Marlin"
+  },
+  "F8_FACING": {
+    "type": "dropdown",
+    "label": "GIF domyślnie patrzy w...",
+    "value": "right",
+    "options": {
+      "right": "prawo →",
+      "left": "← lewo"
+    },
+    "group": "🗡️ Marlin"
+  },
+  "F8_DIR": {
+    "type": "dropdown",
+    "label": "Kierunek pływania",
+    "value": "random",
+    "options": {
+      "right": "zawsze →",
+      "left": "← zawsze",
+      "random": "losowo (miks)"
+    },
+    "group": "🗡️ Marlin"
+  },
+  "F8_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar ryby (px)",
+    "value": 128,
+    "min": 20,
+    "max": 220,
+    "step": 2,
+    "group": "🗡️ Marlin"
+  },
+  "F8_GIF": {
+    "type": "image-input",
+    "label": "GIF pływania",
+    "value": "",
+    "group": "🗡️ Marlin"
+  },
+  "F8_REVEAL": {
+    "type": "image-input",
+    "label": "Grafika reveal (karta)",
+    "value": "",
+    "group": "🗡️ Marlin"
+  },
+  "F8_REVEAL_X": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja X (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🗡️ Marlin"
+  },
+  "F8_REVEAL_Y": {
+    "type": "slider",
+    "label": "Karta reveal: pozycja Y (%)",
+    "value": 0,
+    "min": -50,
+    "max": 50,
+    "step": 1,
+    "group": "🗡️ Marlin"
+  },
+  "F8_REVEAL_SCALE": {
+    "type": "slider",
+    "label": "Karta reveal: skala (%)",
+    "value": 100,
+    "min": 20,
+    "max": 250,
+    "step": 5,
+    "group": "🗡️ Marlin"
+  },
+  "F8_IS_PREDATOR": {
+    "type": "checkbox",
+    "label": "Jest drapieżnikiem?",
+    "value": true,
+    "group": "🗡️ Marlin"
+  },
+  "F8_EATS": {
+    "type": "text",
+    "label": "Zjada (klucze: fish,perch,pike,trout,serpent,quara,minnow,marlin)",
+    "value": "fish,perch,minnow,trout",
+    "group": "🗡️ Marlin"
+  },
+  "_scene": {
+    "type": "hidden",
+    "label": "═══════ 🖼️ SCENA ═══════"
+  },
+  "BG_SCENE": {
+    "type": "image-input",
+    "label": "Tło+pomost (jedna grafika, dochodzi do belek)",
+    "value": "",
+    "group": "🖼️ Scena"
+  },
+  "BG_WATER_TOP": {
+    "type": "color",
+    "label": "Woda — powierzchnia",
+    "value": "#1d7f93",
+    "group": "🖼️ Scena"
+  },
+  "BG_WATER_DEEP": {
+    "type": "color",
+    "label": "Woda — głębia",
+    "value": "#061528",
+    "group": "🖼️ Scena"
+  },
+  "BG_WATER_ABYSS": {
+    "type": "color",
+    "label": "Woda — otchłań",
+    "value": "#01060e",
+    "group": "🖼️ Scena"
+  },
+  "_bottom": {
+    "type": "hidden",
+    "label": "═══════ (dno usunięte) ═══════"
+  },
+  "_hero": {
+    "type": "hidden",
+    "label": "═══════ 🧑‍🎣 WĘDKARZ ═══════"
+  },
+  "HERO_IMG": {
+    "type": "image-input",
+    "label": "Grafika wędkarza (z wędką, BEZ żyłki!)",
+    "value": "",
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_NAME_ON": {
+    "type": "checkbox",
+    "label": "Pokaż imię nad wędkarzem",
+    "value": true,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_NAMES": {
+    "type": "text",
+    "label": "Imiona (losowane, oddziel przecinkiem)",
+    "value": "Janusz Wentyl, Karpiorz, Zdziuchu Motyka, Mietek Spławik, Heniek Podbierak, Sumiczny Bob",
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_NAME_OX": {
+    "type": "slider",
+    "label": "Nick: offset X",
+    "value": 0,
+    "min": -400,
+    "max": 400,
+    "step": 2,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_NAME_OY": {
+    "type": "slider",
+    "label": "Nick: offset Y",
+    "value": 0,
+    "min": -400,
+    "max": 400,
+    "step": 2,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_BUBBLE_OX": {
+    "type": "slider",
+    "label": "Dymek wędkarza: offset X",
+    "value": 0,
+    "min": -400,
+    "max": 400,
+    "step": 2,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_BUBBLE_OY": {
+    "type": "slider",
+    "label": "Dymek wędkarza: offset Y",
+    "value": 0,
+    "min": -400,
+    "max": 400,
+    "step": 2,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_FISH_OX": {
+    "type": "slider",
+    "label": "Ryba na wędce: offset X",
+    "value": 0,
+    "min": -400,
+    "max": 400,
+    "step": 2,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_FISH_OY": {
+    "type": "slider",
+    "label": "Ryba na wędce: offset Y",
+    "value": 0,
+    "min": -400,
+    "max": 400,
+    "step": 2,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HOOK_OX": {
+    "type": "slider",
+    "label": "Haczyk: offset X od końca żyłki",
+    "value": 0,
+    "min": -200,
+    "max": 200,
+    "step": 1,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HOOK_OY": {
+    "type": "slider",
+    "label": "Haczyk: offset Y od końca żyłki",
+    "value": 0,
+    "min": -200,
+    "max": 200,
+    "step": 1,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_X": {
+    "type": "slider",
+    "label": "Pozycja X",
+    "value": 842,
+    "min": 0,
+    "max": 1800,
+    "step": 5,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_Y": {
+    "type": "slider",
+    "label": "Pozycja Y",
+    "value": 236,
+    "min": 100,
+    "max": 560,
+    "step": 5,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "HERO_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar",
+    "value": 120,
+    "min": 60,
+    "max": 320,
+    "step": 5,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "LINE_ORIGIN_X": {
+    "type": "slider",
+    "label": "Żyłka: korekta X od prawego-górnego rogu wędkarza",
+    "value": 0,
+    "min": -900,
+    "max": 900,
+    "step": 2,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "LINE_ORIGIN_Y": {
+    "type": "slider",
+    "label": "Żyłka: korekta Y od prawego-górnego rogu wędkarza",
+    "value": 0,
+    "min": -600,
+    "max": 600,
+    "step": 2,
+    "group": "🧑‍🎣 Wędkarz"
+  },
+  "_obs": {
+    "type": "hidden",
+    "label": "═══════ 👥 OBSERWATORZY ═══════"
+  },
+  "OBS_LN_X": {
+    "type": "slider",
+    "label": "Lewa-bliska: X",
+    "value": 640,
+    "min": 0,
+    "max": 1900,
+    "step": 10,
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_LN_Y": {
+    "type": "slider",
+    "label": "Lewa-bliska: Y",
+    "value": 300,
+    "min": 0,
+    "max": 1900,
+    "step": 10,
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_LF_X": {
+    "type": "slider",
+    "label": "Lewa-daleka: X",
+    "value": 360,
+    "min": 0,
+    "max": 1900,
+    "step": 10,
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_LF_Y": {
+    "type": "slider",
+    "label": "Lewa-daleka: Y",
+    "value": 320,
+    "min": 0,
+    "max": 1900,
+    "step": 10,
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_RN_X": {
+    "type": "slider",
+    "label": "Prawa-bliska: X",
+    "value": 1080,
+    "min": 0,
+    "max": 1900,
+    "step": 10,
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_RN_Y": {
+    "type": "slider",
+    "label": "Prawa-bliska: Y",
+    "value": 300,
+    "min": 0,
+    "max": 1900,
+    "step": 10,
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_RF_X": {
+    "type": "slider",
+    "label": "Prawa-daleka: X",
+    "value": 1400,
+    "min": 0,
+    "max": 1900,
+    "step": 10,
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_RF_Y": {
+    "type": "slider",
+    "label": "Prawa-daleka: Y",
+    "value": 320,
+    "min": 0,
+    "max": 1900,
+    "step": 10,
+    "group": "👥 Obserwatorzy"
+  },
+  "MAX_OBSERVERS": {
+    "type": "number",
+    "label": "Obserwatorzy widoczni naraz (reszta → rotacja/licznik)",
+    "value": 50,
+    "min": 4,
+    "max": 80,
+    "step": 2,
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar sprite'a (px)",
+    "value": 54,
+    "min": 24,
+    "max": 120,
+    "step": 2,
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_GAP": {
+    "type": "slider",
+    "label": "Odstęp między obserwatorami (px)",
+    "value": 10,
+    "min": 0,
+    "max": 40,
+    "step": 2,
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_GIF1": {
+    "type": "image-input",
+    "label": "GIF obserwatora 1",
+    "value": "",
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_GIF2": {
+    "type": "image-input",
+    "label": "GIF obserwatora 2",
+    "value": "",
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_GIF3": {
+    "type": "image-input",
+    "label": "GIF obserwatora 3",
+    "value": "",
+    "group": "👥 Obserwatorzy"
+  },
+  "OBS_GIF4": {
+    "type": "image-input",
+    "label": "GIF obserwatora 4",
+    "value": "",
+    "group": "👥 Obserwatorzy"
+  },
+  "_fx": {
+    "type": "hidden",
+    "label": "═══════ ✨ FX ═══════"
+  },
+  "FX_SPLASH": {
+    "type": "image-input",
+    "label": "Plusk",
+    "value": "",
+    "group": "✨ FX"
+  },
+  "FX_BITE": {
+    "type": "image-input",
+    "label": "Branie",
+    "value": "",
+    "group": "✨ FX"
+  },
+  "FX_SPARKLE": {
+    "type": "image-input",
+    "label": "Iskry zwycięstwa",
+    "value": "",
+    "group": "✨ FX"
+  },
+  "SHOW_GODRAYS": {
+    "type": "checkbox",
+    "label": "Promienie światła",
+    "value": true,
+    "group": "✨ FX"
+  },
+  "_sonar": {
+    "type": "hidden",
+    "label": "═══════ 📡 SONAR ═══════"
+  },
+  "SONAR_SHOW": {
+    "type": "checkbox",
+    "label": "Pokaż sonar",
+    "value": true,
+    "group": "📡 Sonar"
+  },
+  "SONAR_X": {
+    "type": "slider",
+    "label": "X (od prawej)",
+    "value": 48,
+    "min": 0,
+    "max": 1800,
+    "step": 5,
+    "group": "📡 Sonar"
+  },
+  "SONAR_Y": {
+    "type": "slider",
+    "label": "Y (od góry)",
+    "value": 436,
+    "min": 100,
+    "max": 900,
+    "step": 5,
+    "group": "📡 Sonar"
+  },
+  "SONAR_W": {
+    "type": "slider",
+    "label": "Szerokość",
+    "value": 120,
+    "min": 60,
+    "max": 240,
+    "step": 4,
+    "group": "📡 Sonar"
+  },
+  "SONAR_H": {
+    "type": "slider",
+    "label": "Wysokość",
+    "value": 600,
+    "min": 300,
+    "max": 980,
+    "step": 10,
+    "group": "📡 Sonar"
+  },
+  "_lb": {
+    "type": "hidden",
+    "label": "═══════ 🏆 LEADERBOARD ═══════"
+  },
+  "LB_SHOW": {
+    "type": "checkbox",
+    "label": "Pokaż",
+    "value": true,
+    "group": "🏆 Leaderboard"
+  },
+  "LB_TITLE": {
+    "type": "text",
+    "label": "Tytuł",
+    "value": "MISTRZOWIE CALASSY",
+    "group": "🏆 Leaderboard"
+  },
+  "LB_X": {
+    "type": "slider",
+    "label": "X",
+    "value": 46,
+    "min": 0,
+    "max": 1700,
+    "step": 5,
+    "group": "🏆 Leaderboard"
+  },
+  "LB_Y": {
+    "type": "slider",
+    "label": "Y",
+    "value": 20,
+    "min": 0,
+    "max": 900,
+    "step": 5,
+    "group": "🏆 Leaderboard"
+  },
+  "LB_W": {
+    "type": "slider",
+    "label": "Szerokość",
+    "value": 300,
+    "min": 180,
+    "max": 480,
+    "step": 10,
+    "group": "🏆 Leaderboard"
+  },
+  "_col": {
+    "type": "hidden",
+    "label": "═══════ 🎨 KOLORY ═══════"
+  },
+  "COL_GOLD": {
+    "type": "color",
+    "label": "Złoty",
+    "value": "#ffd24a",
+    "group": "🎨 Kolory"
+  },
+  "COL_CREAM": {
+    "type": "color",
+    "label": "Kremowy",
+    "value": "#fff6df",
+    "group": "🎨 Kolory"
+  },
+  "COL_BIO": {
+    "type": "color",
+    "label": "Bioluminescencja",
+    "value": "#34e6cf",
+    "group": "🎨 Kolory"
+  },
+  "COL_WIN": {
+    "type": "color",
+    "label": "Zwycięstwo",
+    "value": "#7fffb0",
+    "group": "🎨 Kolory"
+  },
+  "_snd": {
+    "type": "hidden",
+    "label": "═══════ 🔊 DŹWIĘK ═══════"
+  },
+  "SND_ON": {
+    "type": "checkbox",
+    "label": "Dźwięki",
+    "value": false,
+    "group": "🔊 Dźwięk"
+  },
+  "SND_VOLUME": {
+    "type": "slider",
+    "label": "Głośność (%)",
+    "value": 60,
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "group": "🔊 Dźwięk"
+  },
+  "SND_CAST_FILE": {
+    "type": "sound-input",
+    "label": "Plik: rzut (z bazy SE)",
+    "value": "",
+    "group": "🔊 Dźwięk"
+  },
+  "SND_CAST": {
+    "type": "text",
+    "label": "URL rzut",
+    "value": "",
+    "group": "🔊 Dźwięk"
+  },
+  "SND_BITE_FILE": {
+    "type": "sound-input",
+    "label": "Plik: branie",
+    "value": "",
+    "group": "🔊 Dźwięk"
+  },
+  "SND_BITE": {
+    "type": "text",
+    "label": "URL branie",
+    "value": "",
+    "group": "🔊 Dźwięk"
+  },
+  "SND_WIN_FILE": {
+    "type": "sound-input",
+    "label": "Plik: fanfary",
+    "value": "",
+    "group": "🔊 Dźwięk"
+  },
+  "SND_WIN": {
+    "type": "text",
+    "label": "URL fanfary",
+    "value": "",
+    "group": "🔊 Dźwięk"
+  },
+  "SND_AMBIENT_FILE": {
+    "type": "sound-input",
+    "label": "Plik: ambient (pętla)",
+    "value": "",
+    "group": "🔊 Dźwięk"
+  },
+  "SND_AMBIENT": {
+    "type": "text",
+    "label": "URL ambient (pętla)",
+    "value": "",
+    "group": "🔊 Dźwięk"
+  },
+  "SND_CAST_VOL": {
+    "type": "slider",
+    "label": "Głośność: rzut (%)",
+    "value": 100,
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "group": "🔊 Dźwięk"
+  },
+  "SND_BITE_VOL": {
+    "type": "slider",
+    "label": "Głośność: branie (%)",
+    "value": 100,
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "group": "🔊 Dźwięk"
+  },
+  "SND_WIN_VOL": {
+    "type": "slider",
+    "label": "Głośność: fanfary (%)",
+    "value": 100,
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "group": "🔊 Dźwięk"
+  },
+  "SND_AMBIENT_VOL": {
+    "type": "slider",
+    "label": "Głośność: woda/ambient (%)",
+    "value": 50,
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "group": "🔊 Dźwięk"
+  },
+  "_amb": {
+    "type": "hidden",
+    "label": "═══════ 🌊 AMBIENT WARSTWY (losowe głosy) ═══════"
+  },
+  "AMB1_FILE": {
+    "type": "sound-input",
+    "label": "Warstwa 1 — plik (np. tłum)",
+    "value": "",
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB1_URL": {
+    "type": "text",
+    "label": "Warstwa 1 — URL (alternatywa do pliku)",
+    "value": "",
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB1_VOL": {
+    "type": "slider",
+    "label": "Warstwa 1 — głośność (%)",
+    "value": 70,
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB1_MIN": {
+    "type": "number",
+    "label": "Warstwa 1 — min odstęp (s)",
+    "value": 12,
+    "min": 2,
+    "max": 600,
+    "step": 1,
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB1_MAX": {
+    "type": "number",
+    "label": "Warstwa 1 — max odstęp (s)",
+    "value": 35,
+    "min": 2,
+    "max": 600,
+    "step": 1,
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB2_FILE": {
+    "type": "sound-input",
+    "label": "Warstwa 2 — plik (np. ptaki/mewy)",
+    "value": "",
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB2_URL": {
+    "type": "text",
+    "label": "Warstwa 2 — URL (alternatywa do pliku)",
+    "value": "",
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB2_VOL": {
+    "type": "slider",
+    "label": "Warstwa 2 — głośność (%)",
+    "value": 70,
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB2_MIN": {
+    "type": "number",
+    "label": "Warstwa 2 — min odstęp (s)",
+    "value": 12,
+    "min": 2,
+    "max": 600,
+    "step": 1,
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB2_MAX": {
+    "type": "number",
+    "label": "Warstwa 2 — max odstęp (s)",
+    "value": 35,
+    "min": 2,
+    "max": 600,
+    "step": 1,
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB3_FILE": {
+    "type": "sound-input",
+    "label": "Warstwa 3 — plik (np. dzwon/pomost)",
+    "value": "",
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB3_URL": {
+    "type": "text",
+    "label": "Warstwa 3 — URL (alternatywa do pliku)",
+    "value": "",
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB3_VOL": {
+    "type": "slider",
+    "label": "Warstwa 3 — głośność (%)",
+    "value": 70,
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB3_MIN": {
+    "type": "number",
+    "label": "Warstwa 3 — min odstęp (s)",
+    "value": 12,
+    "min": 2,
+    "max": 600,
+    "step": 1,
+    "group": "🌊 Ambient warstwy"
+  },
+  "AMB3_MAX": {
+    "type": "number",
+    "label": "Warstwa 3 — max odstęp (s)",
+    "value": 35,
+    "min": 2,
+    "max": 600,
+    "step": 1,
+    "group": "🌊 Ambient warstwy"
+  },
+  "WATER_SURFACE_GAP": {
+    "type": "slider",
+    "label": "Strefa pod powierzchnią (px) — obniża ryby/haczyk",
+    "value": 60,
+    "min": 0,
+    "max": 300,
+    "step": 5,
+    "group": "🖼️ Scena"
+  },
+  "RACK_FISH_ROTATE": {
+    "type": "slider",
+    "label": "Obrót ryby na wieszaku (°)",
+    "value": 90,
+    "min": -180,
+    "max": 180,
+    "step": 5,
+    "group": "🎏 Wieszak"
+  },
+  "_rlm": {
+    "type": "hidden",
+    "label": "═══════ 🌊 REALIZM WODY ═══════"
+  },
+  "REALISM_BUBBLES": {
+    "type": "slider",
+    "label": "Bąbelki — intensywność (%) (0=wył.)",
+    "value": 100,
+    "min": 0,
+    "max": 300,
+    "step": 10,
+    "group": "🌊 Realizm wody"
+  },
+  "REALISM_SILT": {
+    "type": "checkbox",
+    "label": "Mył przy dnie",
+    "value": true,
+    "group": "🌊 Realizm wody"
+  },
+  "REALISM_SHIMMER": {
+    "type": "checkbox",
+    "label": "Refrakcja/shimmer pod powierzchnią",
+    "value": true,
+    "group": "🌊 Realizm wody"
+  },
+  "_wife": {
+    "type": "hidden",
+    "label": "═══════ 👰 ŻONA RYBAKA ═══════"
+  },
+  "WIFE_ON": {
+    "type": "checkbox",
+    "label": "Włącz żonę (wchodzi z lewej podczas gry)",
+    "value": true,
+    "group": "👰 Żona rybaka"
+  },
+  "WIFE_X": {
+    "type": "slider",
+    "label": "Pozycja X (docelowa)",
+    "value": 70,
+    "min": -100,
+    "max": 1800,
+    "step": 5,
+    "group": "👰 Żona rybaka"
+  },
+  "WIFE_Y": {
+    "type": "slider",
+    "label": "Pozycja Y",
+    "value": 300,
+    "min": 0,
+    "max": 1000,
+    "step": 5,
+    "group": "👰 Żona rybaka"
+  },
+  "WIFE_SIZE": {
+    "type": "slider",
+    "label": "Rozmiar (wysokość px)",
+    "value": 160,
+    "min": 60,
+    "max": 420,
+    "step": 5,
+    "group": "👰 Żona rybaka"
+  },
+  "WIFE_FLIP": {
+    "type": "checkbox",
+    "label": "Odbij w poziomie (twarzą w prawo)",
+    "value": true,
+    "group": "👰 Żona rybaka"
+  },
+  "WIFE_FREQ": {
+    "type": "number",
+    "label": "Co ile się pojawia (s, ~losowo)",
+    "value": 45,
+    "min": 10,
+    "max": 600,
+    "step": 5,
+    "group": "👰 Żona rybaka"
+  },
+  "WIFE_HOLD": {
+    "type": "number",
+    "label": "Jak długo zostaje (ms)",
+    "value": 4500,
+    "min": 1000,
+    "max": 15000,
+    "step": 250,
+    "group": "👰 Żona rybaka"
+  },
+  "WIFE_TEXTS": {
+    "type": "text",
+    "label": "Teksty żony (oddziel |, {h}=imię męża)",
+    "value": "{h}! Obiad stygnie!|Ile można siedzieć z tą wędką?!|{h}, wracaj do domu ALBO!|Sąsiad już dawno złowił obiad, a ty?|{h}!!! Dzieci pytają gdzie tata!|Znowu te ryby ważniejsze ode mnie?!|Mówiłam: NAPRAW PŁOT, nie łów!|{h}, jak nic nie złapiesz, śpisz w łodzi!|Cały dzień nad wodą, a kasy jak nie było!|Wałek już czekam, {h}...|Ryby się z ciebie śmieją, wstyd!|{h}, ostatni raz cię ostrzegam!",
+    "group": "👰 Żona rybaka"
+  },
+  "_scale": {
+    "type": "hidden",
+    "label": "═══════ 🧑‍🤝‍🧑 SKALA / TŁUM (do 200 osób) ═══════"
+  },
+  "OBS_ROTATE_ON": {
+    "type": "checkbox",
+    "label": "Rotacja obserwatorów „5 sekund sławy”",
+    "value": true,
+    "group": "🧑‍🤝‍🧑 Skala / tłum"
+  },
+  "OBS_ROTATE_SEC": {
+    "type": "slider",
+    "label": "Co ile sekund rotacja",
+    "value": 5,
+    "min": 2,
+    "max": 30,
+    "step": 1,
+    "group": "🧑‍🤝‍🧑 Skala / tłum"
+  },
+  "CROWD_ON": {
+    "type": "checkbox",
+    "label": "Statyczny tłum w tle (gdy >limit)",
+    "value": true,
+    "group": "🧑‍🤝‍🧑 Skala / tłum"
+  },
+  "TYPERS_COUNTER_ON": {
+    "type": "checkbox",
+    "label": "Licznik „N typów / +X więcej”",
+    "value": true,
+    "group": "🧑‍🤝‍🧑 Skala / tłum"
+  },
+  "GUESS_COOLDOWN_MS": {
+    "type": "number",
+    "label": "Rate-limit: min odstęp typów / osoba (ms)",
+    "value": 1200,
+    "min": 0,
+    "max": 10000,
+    "step": 100,
+    "group": "🧑‍🤝‍🧑 Skala / tłum"
+  },
+  "SONAR_DOTS_ON": {
+    "type": "checkbox",
+    "label": "Sonar: pokazuj kropki typów (gęstość)",
+    "value": true,
+    "group": "🧑‍🤝‍🧑 Skala / tłum"
+  },
+  "SONAR_MAX_DOTS": {
+    "type": "number",
+    "label": "Sonar: max kropek (bezpiecznik wydajności)",
+    "value": 250,
+    "min": 20,
+    "max": 500,
+    "step": 10,
+    "group": "🧑‍🤝‍🧑 Skala / tłum"
+  },
+  "INSTANCE_LOCK": {
+    "type": "checkbox",
+    "label": "Instance-lock: tylko 1 kopia przetwarza czat",
+    "value": true,
+    "group": "🧑‍🤝‍🧑 Skala / tłum"
+  },
+  "_dev": {
+    "type": "hidden",
+    "label": "═══════ 🧪 DEV ═══════"
+  },
+  "TEST_MODE": {
+    "type": "checkbox",
+    "label": "Panel testowy — WYŁĄCZ na streamie",
+    "value": true,
+    "group": "🧪 Dev"
+  },
+  "DEBUG_MODE": {
+    "type": "checkbox",
+    "label": "Logi w konsoli",
+    "value": false,
+    "group": "🧪 Dev"
+  }
+}
