@@ -1,0 +1,137 @@
+<!-- ════════════════════════════════════════════════════════════════
+     CALASSA ADVENTURE v3 — ZAKŁADKA HTML
+     Wklej CAŁOŚĆ do zakładki HTML (nadpisz poprzednie).
+     Nowe: panel zasad, obserwatorzy L+P, robak, wieszak połowów, dno (kraby/skrzynia), sonar glass.
+     FIX żyłka: w .ca-body dodany <i id="ca-rodtip"> — kotwica czubka wędki.
+════════════════════════════════════════════════════════════════ -->
+<div id="ca-fit">
+  <div id="ca-stage">
+    <div id="ca-world">
+
+      <!-- tło+pomost jako jedna grafika (dochodzi do belek) -->
+      <div id="ca-scene"><div class="ca-scene-lbl">[ TŁO + POMOST — BG_SCENE ]</div></div>
+
+      <!-- belki/słupy pod wodą (z kodu) -->
+      <div id="ca-posts">
+        <div class="ca-post" style="left:160px"></div><div class="ca-post" style="left:620px"></div>
+        <div class="ca-post" style="left:1180px"></div><div class="ca-post" style="left:1640px"></div>
+      </div>
+
+      <!-- atmosfera podwodna -->
+      <div id="ca-depthGlow"></div>
+      <div id="ca-godrays"></div>
+      <div id="ca-caustics"></div>
+      <div id="ca-caustics2"></div>
+      <div id="ca-surface"></div>
+      <div id="ca-plankton"></div>
+      <div id="ca-weatherFx"></div>
+
+      <!-- (dno z krabami usunięte) -->
+
+      <!-- ryby (GIF-y, JS zarządza) -->
+      <div id="ca-bigShadow"></div>
+      <div id="ca-fxLayer"></div>
+      <div id="ca-fishLayer"></div>
+
+      <!-- epicki wędkarz (z wędką, bez żyłki) -->
+      <div id="ca-hero"><div class="ca-shadow"></div><div class="ca-heroname" id="ca-heroname"></div><div class="ca-body">🧑‍🎣<i id="ca-rodtip"></i></div></div>
+      <div id="ca-bubble"></div>
+
+      <!-- żona rybaka (wchodzi z lewej, woła/besztuje) -->
+      <div id="ca-wife"><div class="ca-wife-bubble"></div><div class="ca-wife-body"></div></div>
+
+      <!-- obserwatorzy: 4 grupy (lewa-bliska/daleka, prawa-bliska/daleka) -->
+      <div id="ca-obsLN" class="ca-obs"></div>
+      <div id="ca-obsLF" class="ca-obs"></div>
+      <div id="ca-obsRN" class="ca-obs"></div>
+      <div id="ca-obsRF" class="ca-obs"></div>
+      <div id="ca-crowd"></div>
+      <div id="ca-typers"></div>
+
+      <!-- skala głębokości po lewej (morska linijka) -->
+      <div id="ca-depthScale"><div class="ca-ds-line"></div><div id="ca-ds-marks"></div></div>
+
+      <!-- żyłka (skrypt) + robak + spławik + haczyk + głębokość -->
+      <svg id="ca-lineSvg" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path id="ca-linePath" d=""/></svg>
+      <div id="ca-ripple"></div>
+      <div id="ca-worm"></div>
+      <div id="ca-hook">🪝</div>
+      <div id="ca-tag">0 m</div>
+
+      <!-- wieszak połowów na pomoście -->
+      <div id="ca-rackWrap"><div id="ca-rackShadow"></div><div id="ca-rackBg"></div><div id="ca-rack"></div></div>
+
+      <!-- panel walki -->
+      <div id="ca-fightHud">
+        <div class="ca-fight-title">⚔️ WALKA Z RYBĄ</div>
+        <div class="ca-fight-bars">
+          <div class="ca-col ca-stamina"><div class="ca-cl">Wytrzymałość</div><div class="ca-track"><div class="ca-sfill"></div></div></div>
+          <div class="ca-col ca-tension"><div class="ca-cl">Napięcie żyłki</div><div class="ca-track"><div class="ca-tfill"></div><div class="ca-tzone"></div></div></div>
+        </div>
+        <div class="ca-maneuver"></div>
+      </div>
+
+      <!-- tytuł -->
+      <div id="ca-title"><h1 id="ca-title-main">CALASSA ADVENTURE</h1><div id="ca-title-sub">Predykcja Głębin · Zatopione Miasto Quara</div></div>
+
+      <!-- panel zasad (faza rules) -->
+      <div id="ca-rules">
+        <div class="ca-rules-inner">
+          <div class="ca-rules-tex" id="ca-rules-tex"></div>
+          <div class="ca-rules-h" id="ca-rules-h">📖 JAK GRAĆ — ŁOWY CALASSY</div>
+          <div class="ca-rules-body" id="ca-rules-body"></div>
+          <div class="ca-rules-foot" id="ca-rules-foot">Łowienie zaraz się zacznie...</div>
+        </div>
+      </div>
+
+      <!-- leaderboard -->
+      <div id="ca-lb">
+        <div id="ca-lb-head">🏆 MISTRZOWIE CALASSY</div>
+        <div id="ca-lb-sub">Dziś · TC</div>
+        <div id="ca-lb-rows"></div>
+        <div id="ca-lb-record">🏅 Rekord: —</div>
+      </div>
+
+      <!-- sonar glass -->
+      <div id="ca-sonar">
+        <h4>📡 SONAR</h4>
+        <div class="ca-sonar-glass"></div>
+        <div class="ca-strk"></div>
+        <div class="ca-sweep"></div>
+        <div class="ca-tk" data-f="0">0 m</div><div class="ca-tk" data-f="0.25">50</div>
+        <div class="ca-tk" data-f="0.5">100</div><div class="ca-tk" data-f="0.75">150</div><div class="ca-tk" data-f="1">200</div>
+        <div id="ca-marks"></div>
+        <div id="ca-biteLine"><span id="ca-biteLabel">BRANIE</span></div>
+      </div>
+
+      <!-- pogoda badge -->
+      <div id="ca-weatherBadge"></div>
+
+      <!-- narracja -->
+      <div id="ca-narr"></div>
+
+      <!-- HUD komend -->
+      <div id="ca-phud"><span class="ca-c" id="ca-pcmd">!łów &lt;m&gt;</span><span class="ca-t" id="ca-ptxt">Czekaj na otwarcie...</span></div>
+      <div id="ca-ahud"><span class="ca-alab">ADMIN</span><span id="ca-acmd">!start — otwórz łowienie</span></div>
+
+      <!-- panel !moje -->
+      <div id="ca-minePanel"></div>
+
+      <!-- reveal -->
+      <div id="ca-rev"><div id="ca-card"><div id="ca-ci">
+        <div class="ca-holo"></div>
+        <div class="ca-rr" id="ca-rr">—</div>
+        <div class="ca-art" id="ca-art"><span id="ca-art-emoji">🐟</span></div>
+        <div class="ca-nm" id="ca-nm">—</div>
+        <div class="ca-st" id="ca-st"></div>
+        <div class="ca-wn" id="ca-wn"></div>
+        <div class="ca-po" id="ca-po"></div>
+      </div></div></div>
+
+      <div id="ca-vignette"></div>
+    </div>
+
+    <!-- panel testowy -->
+    <div id="ca-testmount"></div>
+  </div>
+</div>
